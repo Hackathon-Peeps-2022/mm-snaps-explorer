@@ -15,11 +15,28 @@
     "styled-components": "^5.3.5",
     "web-vitals": "^2.1.4"
   },
+  "devDependencies": {
+    "@stylelint/postcss-css-in-js": "^0.38.0",
+    "eslint": "^8.3.0",
+    "eslint-config-standard": "^16.0.3",
+    "eslint-plugin-import": "^2.25.3",
+    "eslint-plugin-jsx-a11y": "^6.5.1",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^5.2.0",
+    "postcss-jsx": "^0.36.4",
+    "postcss-syntax": "^0.36.2",
+    "stylelint": "^14.8.2",
+    "stylelint-config-recommended": "^7.0.0",
+    "stylelint-config-styled-components": "^0.1.1",
+    "stylelint-processor-styled-components": "^1.10.0"
+  },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "lint:css": "stylelint './src/**/*.js' --fix --custom-syntax @stylelint/postcss-css-in-js",
+    "lint:react": "eslint ."
   },
   "eslintConfig": {
     "extends": [
