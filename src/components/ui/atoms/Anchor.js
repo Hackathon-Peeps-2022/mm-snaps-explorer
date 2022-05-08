@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 const Wrap = styled.div`
   a {
-    font-family: "Euclid";
+    font-family: "Euclid",serif;
     color: #24292e;
     text-decoration: none;
     letter-spacing: 0.75px;
