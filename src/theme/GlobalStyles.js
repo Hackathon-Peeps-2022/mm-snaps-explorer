@@ -102,6 +102,7 @@ const GlobalStyles = createGlobalStyle`
 		background-color: #C3A9F9;
 		opacity: 0.6;
 		align-self: stretch;
+		box-sizing: border-box;
 		grid-area: nav;
 		border-radius: 8px;
 		width: 14vw;
