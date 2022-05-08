@@ -1,12 +1,14 @@
 import GlobalStyles from './theme/GlobalStyles'
-import Header from './components/Header'
+
+import Header from './components/organisms/Header'
+import Nav from './components/organisms/Nav'
 
 const App = () => {
   return (
 		<>
 			<GlobalStyles />
 			<Header />
-			<nav></nav>
+			<Nav />
 			<main></main>
 			<footer></footer>
 		</>

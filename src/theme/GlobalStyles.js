@@ -1,4 +1,3 @@
-// import { lighten, cover } from 'polished'
 import { createGlobalStyle } from 'styled-components'
 import regular from '../assets/fonts/Euclid/EuclidCircularB-Regular-WebXL.ttf'
 
@@ -99,6 +98,7 @@ const GlobalStyles = createGlobalStyle`
 		height: 100%;
 		box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
 		justify-self: center;
+		padding: 1em;
 		background-color: #C3A9F9;
 		opacity: 0.6;
 		align-self: stretch;
