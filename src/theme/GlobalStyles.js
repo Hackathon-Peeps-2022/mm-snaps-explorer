@@ -1,7 +1,15 @@
 // import { lighten, cover } from 'polished'
 import { createGlobalStyle } from 'styled-components'
+import regular from '../assets/fonts/Euclid/EuclidCircularB-Regular-WebXL.ttf'
 
 const GlobalStyles = createGlobalStyle`
+  @font-face {
+    font-family: 'Euclid';
+    src: url(${regular});
+    font-style: normal;
+    font-weight: 400;
+  }
+
 	html {
 		height: 100vh;
 	}
@@ -49,15 +57,13 @@ const GlobalStyles = createGlobalStyle`
 		width: 100%;
 		padding: 0 0.25em;
 		border-radius: 8px;
-		-webkit-box-sizing: border-box;
-		-moz-box-sizing: border-box;
 		box-sizing: border-box;
 		> * { justify-self: end; }
 		> img { height: 65px; }
 		@media (min-width: 1200px) {
-			// The MetaMask image already has some padding so we can either use an
-			// image with no padding or only add padding to the right of the header
-			// padding: 0 2em;
+			/* The MetaMask image already has some padding so we can either use an
+			   image with no padding or only add padding to the right of the header
+			   padding: 0 2em; */
 			grid-template-columns: 14vw auto;
 		}
 	}
@@ -99,8 +105,6 @@ const GlobalStyles = createGlobalStyle`
 		grid-area: nav;
 		border-radius: 8px;
 		width: 14vw;
-		justify-self: center;
-		align-self: stretch;
 		@media (min-width: 1500px) {
 			width: 14vw;
 		}
