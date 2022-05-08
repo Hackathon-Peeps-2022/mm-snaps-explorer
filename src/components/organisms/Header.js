@@ -1,6 +1,6 @@
 import React from 'react'
 
-import mmbrand from '../assets/mm_brand.svg'
+import mmbrand from '../../assets/mm_brand.svg'
 
 const Header = () => {
 	return (
