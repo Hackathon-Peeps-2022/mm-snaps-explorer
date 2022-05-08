@@ -44,6 +44,7 @@ const GlobalStyles = createGlobalStyle`
 		grid-area: header;
 		flex-direction: row;
 		height: 80px;
+		box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
 		justify-content: space-between;
 		width: 100%;
 		padding: 0 0.25em;
@@ -67,6 +68,7 @@ const GlobalStyles = createGlobalStyle`
 		border-radius: 8px;
 		grid-area: footer;
 		background-color: #F2F4F6;
+		box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
 		width: 100%;
 		align-self: flex-end;
 		display: flex;
@@ -89,6 +91,7 @@ const GlobalStyles = createGlobalStyle`
 
 	nav {
 		height: 100%;
+		box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
 		justify-self: center;
 		background-color: #C3A9F9;
 		opacity: 0.6;
