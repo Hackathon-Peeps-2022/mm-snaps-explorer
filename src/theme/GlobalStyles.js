@@ -27,7 +27,7 @@ const GlobalStyles = createGlobalStyle`
 			grid-template-areas:
 				"header header"
 				"nav main"
-				"footer footer";
+				"nav footer";
 			@media (min-width: 1500px) {
 				grid-template-rows: 80px auto 80px;
 				grid-template-columns: 14vw auto;
