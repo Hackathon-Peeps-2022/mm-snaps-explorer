@@ -1,4 +1,3 @@
-// import { lighten, cover } from 'polished'
 import { createGlobalStyle } from 'styled-components'
 import regular from '../assets/fonts/Euclid/EuclidCircularB-Regular-WebXL.ttf'
 
