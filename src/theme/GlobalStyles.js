@@ -12,12 +12,13 @@ const GlobalStyles = createGlobalStyle`
 	html {
 		height: 100vh;
 	}
+	
 	body {
 		margin: 0;
 		padding: 0;
 		position: relative;
 		background-color: #fff;
-		color: #000A;
+		color: #24292E;
 		width: 100vw;
 		height: 100%;
 		#root {
@@ -63,6 +64,7 @@ const GlobalStyles = createGlobalStyle`
 			/* The MetaMask image already has some padding so we can either use an
 			   image with no padding or only add padding to the right of the header
 			   padding: 0 2em; */
+			padding-right: 1.5em;
 			grid-template-columns: 14vw auto;
 		}
 	}
