@@ -96,7 +96,7 @@ const GlobalStyles = createGlobalStyle`
 
 	nav {
 		height: 100%;
-		box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+		box-shadow: #C3A9F9 0px 6px 24px 0px, #C3A9F9 0px 0px 0px 1px;
 		justify-self: center;
 		padding: 1em;
 		background-color: #C3A9F9;
