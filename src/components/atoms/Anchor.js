@@ -11,7 +11,7 @@ const Wrap = styled.div`
 `;
 
 const Anchor = ({ link, name, children }) => {
-  return (
+  return (      
     <Wrap>
       <a
         href={link}
