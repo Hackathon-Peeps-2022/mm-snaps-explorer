@@ -1,13 +1,13 @@
-import React from 'react'
+import React from "react";
 
-import SearchBar from '../molecules/SearchBar'
+import SearchBar from "../molecules/SearchBar";
 
 const Nav = () => {
-	return (
-		<nav>
-			<SearchBar />
-		</nav>
-	)
-}
+  return (
+    <nav>
+      <SearchBar />
+    </nav>
+  );
+};
 
-export default Nav
+export default Nav;
