@@ -2,6 +2,7 @@ import GlobalStyles from './theme/GlobalStyles'
 
 import Header from './components/organisms/Header'
 import Nav from './components/organisms/Nav'
+import TopBanner from './components/organisms/TopBanner'
 
 const App = () => {
   return (
@@ -9,7 +10,9 @@ const App = () => {
 			<GlobalStyles />
 			<Header />
 			<Nav />
-			<main></main>
+			<main>
+				<TopBanner></TopBanner>
+			</main>
 			<footer></footer>
 		</>
   );
