@@ -119,7 +119,6 @@ const GlobalStyles = createGlobalStyle`
 		justify-self: stretch;
 		@media (min-width: 500px) {
 			display: grid;
-			place-items: center;
 		}
 	}
 `;

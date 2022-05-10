@@ -40,7 +40,7 @@
     "lint:css": "stylelint './src/**/*.js'",
     "lint:react": "eslint .",
     "lint:misc": "prettier --check './src/**/*.js'",
-    "pretty": "prettier --write './src/**/*.js'",
+    "sit-pretty": "prettier --write './src/**/*.js'",
     "lint": "yarn lint:css && yarn lint:react && yarn lint:misc"
   },
   "eslintConfig": {
