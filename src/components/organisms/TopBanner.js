@@ -9,14 +9,14 @@ const Wrap = styled.div`
   border: 1px solid red;
   height: 100px;
   width: 100%;
-  
+
 `;
 
 const TopBanner = () => {
 
 	return (
         <Wrap>
-           
+
         </Wrap>
     )
 

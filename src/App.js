@@ -1,21 +1,17 @@
-import GlobalStyles from './theme/GlobalStyles'
+import { HashRouter, Route, Routes } from "react-router-dom";
 
-import Header from './components/organisms/Header'
-import Nav from './components/organisms/Nav'
-import TopBanner from './components/organisms/TopBanner'
+import Home from "./pages/Home";
+import AnotherPage from "./pages/AnotherPage";
 
 const App = () => {
   return (
-		<>
-			<GlobalStyles />
-			<Header />
-			<Nav />
-			<main>
-				<TopBanner></TopBanner>
-			</main>
-			<footer></footer>
-		</>
+    <HashRouter>
+      <Routes>
+        <Route element={<Home />} exact path="/" />
+        <Route element={<AnotherPage />} exact path="/test" />
+      </Routes>
+    </HashRouter>
   );
-}
+};
 
 export default App;

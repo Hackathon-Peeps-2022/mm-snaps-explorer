@@ -1,5 +1,5 @@
-import { createGlobalStyle } from 'styled-components'
-import regular from '../assets/fonts/Euclid/EuclidCircularB-Regular-WebXL.ttf'
+import { createGlobalStyle } from "styled-components";
+import regular from "../assets/fonts/Euclid/EuclidCircularB-Regular-WebXL.ttf";
 
 const GlobalStyles = createGlobalStyle`
   @font-face {
@@ -122,6 +122,6 @@ const GlobalStyles = createGlobalStyle`
 			place-items: center;
 		}
 	}
-`
+`;
 
-export default GlobalStyles
+export default GlobalStyles;

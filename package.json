@@ -11,6 +11,7 @@
     "polished": "^4.2.2",
     "react": "^18.1.0",
     "react-dom": "^18.1.0",
+    "react-router-dom": "^6.3.0",
     "react-scripts": "5.0.1",
     "styled-components": "^5.3.5",
     "web-vitals": "^2.1.4"
@@ -34,11 +35,13 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
+    "test": "react-scripts test --passWithNoTests",
     "eject": "react-scripts eject",
     "lint:css": "stylelint './src/**/*.js'",
     "lint:react": "eslint .",
-    "lint:misc": "prettier --check './src/**/*.js'"
+    "lint:misc": "prettier --check './src/**/*.js'",
+    "pretty": "prettier --write './src/**/*.js'",
+    "lint": "yarn lint:css && yarn lint:react && yarn lint:misc"
   },
   "eslintConfig": {
     "extends": [
