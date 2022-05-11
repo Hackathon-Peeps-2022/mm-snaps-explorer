@@ -1,14 +1,20 @@
 import React from "react";
 
 import SearchBar from "../molecules/SearchBar";
-import { Link } from "react-router-dom";
+
+import MenuLink from "../atoms/MenuLink";
+
+import star from "../../assets/star.svg";
 
 const Nav = () => {
   return (
     <nav>
       <SearchBar />
-      <Link to="/">Main</Link>
-      <Link to="test">Test</Link>
+      <MenuLink link="/" name="Categories" icon={star}></MenuLink>
+      <div style={{position:'relative', left:'20px'}}>
+        <MenuLink link="/:nfts" name="NFTs" icon={star}></MenuLink>
+      </div>
+      <MenuLink link="test" name="Test" icon={star}></MenuLink>
     </nav>
   );
 };

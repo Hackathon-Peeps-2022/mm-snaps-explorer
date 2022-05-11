@@ -2,7 +2,7 @@ import GlobalStyles from "../theme/GlobalStyles";
 
 import Header from "../components/organisms/Header";
 import Nav from "../components/organisms/Nav";
-import { Routes, Route, Outlet } from "react-router-dom";
+import { Outlet } from "react-router-dom";
 
 const Layout = () => {
   return (
