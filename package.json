@@ -38,7 +38,7 @@
     "test": "react-scripts test --passWithNoTests",
     "eject": "react-scripts eject",
     "lint:css": "stylelint './src/**/*.js'",
-    "lint:react": "eslint .",
+    "lint:react": "eslint './src/**/*.js'",
     "lint:misc": "prettier --check './src/**/*.js'",
     "sit-pretty": "prettier --write './src/**/*.js'",
     "lint": "yarn lint:css && yarn lint:react && yarn lint:misc"
