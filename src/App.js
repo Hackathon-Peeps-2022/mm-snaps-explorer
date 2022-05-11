@@ -1,8 +1,9 @@
 import { HashRouter, Route, Routes } from "react-router-dom";
 
-import AnotherPage from "./pages/AnotherPage";
+import NoMatch from "./pages/NoMatch";
 import Layout from "./pages/Layout";
 import Main from "./pages/Main";
+import TestCatalog from "./pages/TestCatalog";
 
 const App = () => {
   return (
@@ -10,9 +11,9 @@ const App = () => {
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route path="/" element={<Main />} />
-          <Route path="test" element={<AnotherPage />} />
+          <Route path="/test" element={<TestCatalog />} />
+          <Route path="*" element={<NoMatch />} />
         </Route>
-        <Route element={<AnotherPage />} exact path="/test" />
       </Routes>
     </HashRouter>
   );
