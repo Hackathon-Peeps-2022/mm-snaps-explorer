@@ -12,13 +12,14 @@ const GlobalStyles = createGlobalStyle`
 	html {
 		height: 100vh;
 	}
-	
+
 	body {
 		margin: 0;
 		padding: 0;
 		position: relative;
 		background-color: #fff;
 		color: #24292E;
+		font-family: 'Euclid';
 		width: 100vw;
 		height: 100%;
 		#root {
