@@ -4,12 +4,15 @@ import styled from 'styled-components'
 
 const Container = styled.div`
 	display: flex;
+	border: 1px solid red;
+	width: 21vw;
 	flex-direction: column;
 	img {
 	}
 	h3, p {
 		padding: 0;
 		margin: 0;
+		margin-left: 8px;
 	}
 `
 
