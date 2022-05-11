@@ -1,16 +1,25 @@
 import { createGlobalStyle } from "styled-components";
 import regular from "../assets/fonts/Euclid/EuclidCircularB-Regular-WebXL.ttf";
+import bold from "../assets/fonts/Euclid/EuclidCircularB-Bold-WebXL.ttf";
 
 const GlobalStyles = createGlobalStyle`
   @font-face {
     font-family: 'Euclid';
-    src: url(${regular});
     font-style: normal;
     font-weight: 400;
+    src: url(${regular}) format('truetype');
+  }
+
+  @font-face {
+    font-family: 'Euclid';
+    font-style: normal;
+    font-weight: 700;
+    src: url(${bold}) format('truetype');
   }
 
 	html {
 		height: 100vh;
+    font-family: "Euclid", serif;
 	}
 
 	body {
@@ -99,11 +108,10 @@ const GlobalStyles = createGlobalStyle`
 
 	nav {
 		height: 100%;
-		box-shadow: #C3A9F9 0px 6px 24px 0px, #C3A9F9 0px 0px 0px 1px;
+    box-shadow: 0px 2px 7px rgba(0, 0, 0, 0.15);
 		justify-self: center;
 		padding: 1em;
-		background-color: #C3A9F9;
-		opacity: 0.6;
+    background: rgba(195, 169, 249, 0.5);
 		align-self: stretch;
 		box-sizing: border-box;
 		grid-area: nav;
