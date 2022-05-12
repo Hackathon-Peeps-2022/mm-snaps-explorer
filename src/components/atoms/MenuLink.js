@@ -20,7 +20,7 @@ const Icon = styled.img`
 
 const MenuLink = ({ link, name, icon, children }) => {
   return (
-    <Wrap to={link}>
+    <Wrap to={link} end>
       <p>
         <Icon alt={name} src={icon} />
         {name}
