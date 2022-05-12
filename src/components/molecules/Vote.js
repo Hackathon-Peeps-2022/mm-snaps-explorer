@@ -10,7 +10,6 @@ const Wrap = styled.div`
 	display: flex;
 	flex-direction: column;
 	width: 2em;
-	${'' /* Smol hangup here is if we have more than single/double digit votes */}
 	align-items: center;
 	button {
 		height: 1em;
