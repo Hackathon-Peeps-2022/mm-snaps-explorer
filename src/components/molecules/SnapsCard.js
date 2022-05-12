@@ -10,7 +10,9 @@ const Wrap = styled.div`
     height: 150px;
     width: 100%;
     border-radius: 6px;
+    /* stylelint-disable */
     background-color: ${(props) => props.bgColor};
+    /* stylelint-enable */
   }
   h3,
   p {
