@@ -8,5 +8,8 @@ module.exports = {
       files: ['**/*.{js,ts,jsx,tsx}'],
       customSyntax: '@stylelint/postcss-css-in-js'
     }
-  ]
+  ],
+  rules: {
+    "function-no-unknown": null
+  }
 };
