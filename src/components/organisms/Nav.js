@@ -25,7 +25,11 @@ const Nav = () => {
       <MenuLink link="test" name="Test All Snaps" icon={categories}></MenuLink>
       <div style={{ position: "relative", left: "10px" }}>
         <FilterLink category="coin" name="Filter 1" icon={nft}></FilterLink>
-        <FilterLink category="utility" name="Filter 2" icon={iconStars}></FilterLink>
+        <FilterLink
+          category="utility"
+          name="Filter 2"
+          icon={iconStars}
+        ></FilterLink>
       </div>
     </nav>
   );

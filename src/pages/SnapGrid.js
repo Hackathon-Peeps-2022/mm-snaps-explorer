@@ -24,7 +24,10 @@ const SnapGrid = () => {
         {snaps.map((snap) => {
           let name = `${snap.creator} ${snap.installation} ${snap.title}`;
           return (
-            <div key={snap.id} style={{ position: "relative", border: "1px dashed red" }}>
+            <div
+              key={snap.id}
+              style={{ position: "relative", border: "1px dashed red" }}
+            >
               <img
                 width={100}
                 height={100}
@@ -39,7 +42,7 @@ const SnapGrid = () => {
               />
               <Link
                 style={{ position: "absolute", inset: 0 }}
-                to={`/sneakers/${snap.id}`}
+                to={`/snap/${snap.id}`}
               >
                 <VisuallyHidden>{name}</VisuallyHidden>
               </Link>
