@@ -2,29 +2,33 @@ import React from 'react'
 
 import styled from 'styled-components'
 
-const Container = styled.div`
+const Wrap = styled.div`
 	display: flex;
-	border: 1px solid red;
-	width: 21vw;
+	width: 20vw;
 	flex-direction: column;
-	img {
+	> div {
+		height: 150px;
+		width: 100%;
+		border-radius: 6px;
+		background-color: ${props => props.bgColor};
 	}
 	h3, p {
 		padding: 0;
 		margin: 0;
-		margin-left: 8px;
 	}
 `
 
-const SnapCard = ({ snapItem }) => {
+const SnapCard = ({ snapItem, bgColor }) => {
 	const { img, description, name } = snapItem
 
 	return (
-		<Container>
-			<img src={img} alt={name}/>
+		<Wrap bgColor={bgColor}>
+			<div>
+				<img src={img} alt={name}/>
+			</div>
 			<h3>{name}</h3>
 			<p>{description}</p>
-		</Container>
+		</Wrap>
 	)
 }
 

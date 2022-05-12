@@ -2,8 +2,9 @@ import React from 'react'
 
 import styled from 'styled-components'
 
+import SnapItem from '../molecules/SnapItem'
+
 const Wrap = styled.div`
-	${'' /* Need to make reusable grid/flex container here */}
 	height: fit-content;
 	> h2 {
 		margin: 0;
@@ -20,6 +21,9 @@ const Recommended = () => {
 	return (
 		<Wrap>
 			<h2>Recommended Snaps</h2>
+			<div>
+				<SnapItem />
+			</div>
 		</Wrap>
 	)
 }

@@ -20,6 +20,7 @@ const Wrap = styled.div`
 
 const Featured = () => {
 	const { img, img2, img3, img4 } = images
+	const bgColors = ['#36bfc5', '#00a3fe', '#fa004b', '#5303f7']
 	const featuredSnaps = [
 		{
 			name: 'Snap Name',
@@ -47,7 +48,7 @@ const Featured = () => {
 			<h2>Featured Snaps</h2>
 			<div>
 				{featuredSnaps.map((snap, idx) =>
-					<SnapsCard snapItem={snap} key={`Snap ${idx+1}`}/>
+					<SnapsCard snapItem={snap} bgColor={bgColors[idx]} key={`Snap ${idx+1}`}/>
 				)}
 			</div>
 		</Wrap>

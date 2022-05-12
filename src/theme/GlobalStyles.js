@@ -26,7 +26,7 @@ const GlobalStyles = createGlobalStyle`
 		margin: 0;
 		padding: 0;
 		position: relative;
-		background-color: #fff;
+		background-color: #E5E5E5;
 		color: #24292E;
 		font-family: 'Euclid';
 		width: 100vw;
