@@ -3,15 +3,15 @@ import { HashRouter, Route, Routes } from "react-router-dom";
 import NoMatch from "./pages/NoMatch";
 import Layout from "./pages/Layout";
 import Main from "./pages/Main";
-import TestCatalog from "./pages/TestCatalog";
+import SnapGrid from "./pages/SnapGrid";
 
 const App = () => {
   return (
     <HashRouter>
       <Routes>
         <Route path="/" element={<Layout />}>
-          <Route path="/" element={<Main />} />
-          <Route path="/test" element={<TestCatalog />} />
+          <Route index element={<Main />} />
+          <Route path="/test" element={<SnapGrid />} />
           <Route path="*" element={<NoMatch />} />
         </Route>
       </Routes>
