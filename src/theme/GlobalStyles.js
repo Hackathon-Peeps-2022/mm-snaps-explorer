@@ -21,13 +21,14 @@ const GlobalStyles = createGlobalStyle`
 		height: 100vh;
     font-family: "Euclid", serif;
 	}
-	
+
 	body {
 		margin: 0;
 		padding: 0;
 		position: relative;
-		background-color: #fff;
+		background-color: #E5E5E5;
 		color: #24292E;
+		font-family: 'Euclid', serif;
 		width: 100vw;
 		height: 100%;
 		#root {
