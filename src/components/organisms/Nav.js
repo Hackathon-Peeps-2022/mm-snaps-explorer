@@ -15,7 +15,7 @@ const Nav = () => {
     <nav>
       <SearchBar />
       <MenuLink link="/" name="Categories" icon={categories}></MenuLink>
-      <div style={{ position: "relative", left: "20px" }}>
+      <div style={{ position: "relative", left: "10px" }}>
         <MenuLink link="/:nfts" name="NFTs" icon={nft}></MenuLink>
         <MenuLink link="/:best" name="Best Rated" icon={iconStars}></MenuLink>
         <MenuLink link="/:best" name="Utilities" icon={box}></MenuLink>
