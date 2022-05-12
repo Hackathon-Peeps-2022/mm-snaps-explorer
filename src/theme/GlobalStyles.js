@@ -28,7 +28,7 @@ const GlobalStyles = createGlobalStyle`
 		position: relative;
 		background-color: #E5E5E5;
 		color: #24292E;
-		font-family: 'Euclid';
+		font-family: 'Euclid', serif;
 		width: 100vw;
 		height: 100%;
 		#root {

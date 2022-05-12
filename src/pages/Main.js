@@ -4,12 +4,12 @@ import Recommended from "../components/organisms/Recommended";
 
 const Main = () => {
   return (
-		<>
-			<TopBanner />
-			<Featured />
-			<Recommended />
-		</>
-	)
+    <>
+      <TopBanner />
+      <Featured />
+      <Recommended />
+    </>
+  );
 };
 
 export default Main;
