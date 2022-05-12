@@ -3,6 +3,7 @@ let SNAPS = [
     "id": "1",
     "title": "Filsnap",
     "creator": "ChainSafe",
+    "category": "Coin",
     "installation": "npm:@chainsafe/filsnap",
     "iconUrl": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/filecoin/info/logo.png",
     "version": "latest",
@@ -13,17 +14,18 @@ let SNAPS = [
     "id": "2",
     "title": "AleoSnap",
     "creator": "piotr",
+    "category": "Utility",
     "installation": "npm:aleo-snap",
-    "iconUrl": "",
+    "iconUrl": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/ethereum/info/logo.png",
     "version": "latest",
     "website": "https://github.com/piotr-roslaniec/ethdenver-2022",
     "describution": "Access Aleo network from your browser using MetaMask."
   }
 ];
 
-function filterByCreator(brand) {
+function filterByCategory(category) {
   return SNAPS.filter(
-    (sneaker) => sneaker.brand.toLowerCase() === brand.toLowerCase()
+    (snap) => snap.category.toLowerCase() === category.toLowerCase()
   );
 }
 
@@ -33,4 +35,4 @@ function getSnapById(id) {
 
 let brands = [...new Set(SNAPS.map((snap) => snap.brand))];
 
-export { brands, SNAPS, filterByCreator, getSnapById };
+export { brands, SNAPS, filterByCategory, getSnapById };

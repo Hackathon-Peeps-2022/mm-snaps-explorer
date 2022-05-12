@@ -1,6 +1,6 @@
 import * as React from "react";
 import { Link, useSearchParams } from "react-router-dom";
-import { filterByCreator, SNAPS } from "../utils/MockSnaps";
+import { filterByCategory, SNAPS } from "../utils/MockSnaps";
 import VisuallyHidden from "@reach/visually-hidden";
 
 const SnapGrid = () => {
@@ -9,7 +9,7 @@ const SnapGrid = () => {
 
   const snaps = React.useMemo(() => {
     if (!category) return SNAPS;
-    return filterByCreator(category);
+    return filterByCategory(category);
   }, [category]);
 
   return (
