@@ -1,7 +1,5 @@
-import fil from "../assets/icons/fil.svg";
 import React from "react";
 import styled from "styled-components";
-import { transparentize } from "polished";
 import InstallButton from "../components/atoms/InstallButton";
 import { useParams } from "react-router-dom";
 import NoMatch from "./NoMatch";
@@ -40,7 +38,6 @@ const Description = styled.div`
 const Votes = styled.div`
   grid-area: votes;
 `;
-
 
 const SnapDetails = () => {
   let { id } = useParams();
