@@ -9,13 +9,12 @@ import Vote from "../molecules/Vote";
 import fil from "../../assets/icons/fil.svg";
 
 const Wrap = styled.div`
-  border: 1px solid red;
   background-color: #f2f4f6;
   border-radius: 5px;
   width: fit-content;
   display: grid;
   padding: 0.5em;
-  gap: 0.5em;
+  gap: 0 0.5em;
   justify-content: space-around;
   grid-template:
     "vote img name install"
