@@ -40,14 +40,14 @@ const GlobalStyles = createGlobalStyle`
 			box-sizing: border-box;
 			overflow: scroll;
 			grid-template-columns: 14vw auto;
-			grid-template-rows: 80px auto 80px;
+			grid-template-rows: 80px auto fit-content;
 			gap: 1em;
 			grid-template-areas:
 				"header header"
 				"nav main"
 				"nav footer";
 			@media (min-width: 1500px) {
-				grid-template-rows: 80px auto 80px;
+				grid-template-rows: 80px auto fit-content;
 				grid-template-columns: 14vw auto;
 				justify-items: stretch;
 			}
@@ -80,7 +80,7 @@ const GlobalStyles = createGlobalStyle`
 	}
 
 	footer {
-		height: 80px;
+		height-fit-content:
 		box-sizing: border-box;
 		border-radius: 8px;
 		grid-area: footer;
@@ -88,21 +88,36 @@ const GlobalStyles = createGlobalStyle`
 		box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
 		width: 100%;
 		align-self: flex-end;
-		display: flex;
-		padding: 0 2em;
-		flex-direction: column;
-		justify-content: center;
-		align-items: center;
-		> * { width: fit-content; }
-		p > a { text-decoration: underline; }
+		display: grid;
+		grid-template-areas:
+			'brand brand brand'
+			'help learn connect'
+			'copyright copyright copyright';
+		> img {
+			height: 50px;
+			grid-area: brand;
+		}
+		> p {
+			margin-left: 1em;
+			grid-area: copyright;
+		}
 		> div {
 			display: flex;
-			flex-direction: row;
-			align-items: center;
+			flex-direction: column;
+		}
+		> div:first-of-type {
+			grid-area: help;
+			margin-left: 1em;
+		}
+		> div:nth-of-type(2) {
+			grid-area: learn;
+		}
+		> div:last-of-type {
+			grid-area: connect;
 		}
 		@media (min-width: 600px) {
-			flex-direction: row;
-			justify-content: space-between;
+			// flex-direction: row;
+			// justify-content: space-between;
 		}
 	}
 
