@@ -115,7 +115,6 @@ const GlobalStyles = createGlobalStyle`
 		> div:last-of-type {
 			grid-area: connect;
 		}
-		@media (min-width: 600px) {}
 	}
 
 	nav {
