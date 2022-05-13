@@ -1,6 +1,7 @@
 import GlobalStyles from "../theme/GlobalStyles";
 
 import Header from "../components/organisms/Header";
+import Footer from "../components/organisms/Footer";
 import Nav from "../components/organisms/Nav";
 import { Outlet } from "react-router-dom";
 
@@ -13,7 +14,7 @@ const Layout = () => {
       <main>
         <Outlet />
       </main>
-      <footer></footer>
+      <Footer />
     </>
   );
 };
