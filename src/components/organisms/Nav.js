@@ -15,22 +15,19 @@ const Nav = () => {
   return (
     <nav>
       <SearchBar />
-      <MenuLink link="/" name="Categories" icon={categories}></MenuLink>
+      <MenuLink link="/" name="Categories" icon={categories} />
       <div style={{ position: "relative", left: "10px" }}>
-        <MenuLink link="/a" name="NFTs" icon={nft}></MenuLink>
-        <MenuLink link="/b" name="Best Rated" icon={iconStars}></MenuLink>
-        <MenuLink link="/c" name="Utilities" icon={box}></MenuLink>
-        <MenuLink link="/d" name="Protocols" icon={protocols}></MenuLink>
+        <MenuLink link="/a" name="NFTs" icon={nft} />
+        <MenuLink link="/b" name="Best Rated" icon={iconStars} />
+        <MenuLink link="/c" name="Utilities" icon={box} />
+        <MenuLink link="/d" name="Protocols" icon={protocols} />
       </div>
-      <MenuLink link="test" name="Test All Snaps" icon={categories}></MenuLink>
+      <MenuLink link="test" name="Test All Snaps" icon={categories} />
       <div style={{ position: "relative", left: "10px" }}>
-        <FilterLink category="coin" name="Filter 1" icon={nft}></FilterLink>
-        <FilterLink
-          category="utility"
-          name="Filter 2"
-          icon={iconStars}
-        ></FilterLink>
+        <FilterLink category="coin" name="Filter 1" icon={nft} />
+        <FilterLink category="utility" name="Filter 2" icon={iconStars} />
       </div>
+      <MenuLink link="snap" name="Snap Details Test" icon={categories} />
     </nav>
   );
 };
