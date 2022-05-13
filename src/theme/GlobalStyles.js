@@ -80,7 +80,7 @@ const GlobalStyles = createGlobalStyle`
 	}
 
 	footer {
-		height-fit-content:
+		height: fit-content;
 		box-sizing: border-box;
 		border-radius: 8px;
 		grid-area: footer;
