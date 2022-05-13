@@ -115,10 +115,7 @@ const GlobalStyles = createGlobalStyle`
 		> div:last-of-type {
 			grid-area: connect;
 		}
-		@media (min-width: 600px) {
-			// flex-direction: row;
-			// justify-content: space-between;
-		}
+		@media (min-width: 600px) {}
 	}
 
 	nav {
