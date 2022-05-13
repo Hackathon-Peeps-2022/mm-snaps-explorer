@@ -24,7 +24,7 @@ const Nav = () => {
       </div>
       <MenuLink link="test" name="Test All Snaps" icon={categories} />
       <div style={{ position: "relative", left: "10px" }}>
-        <FilterLink category="coin" name="Filter 1" icon={nft} />
+        <FilterLink category="protocol" name="Filter 1" icon={nft} />
         <FilterLink category="utility" name="Filter 2" icon={iconStars} />
       </div>
     </nav>
