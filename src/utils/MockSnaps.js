@@ -9,7 +9,7 @@ let SNAPS = [
       "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/filecoin/info/logo.png",
     version: "latest",
     website: "https://github.com/ChainSafe/filsnap",
-    describution: "Metamask snap to interact with Filecoin dapps.",
+    description: "Metamask snap to interact with Filecoin dapps.",
   },
   {
     id: "2",
@@ -21,7 +21,7 @@ let SNAPS = [
       "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/ethereum/info/logo.png",
     version: "latest",
     website: "https://github.com/piotr-roslaniec/ethdenver-2022",
-    describution: "Access Aleo network from your browser using MetaMask.",
+    description: "Access Aleo network from your browser using MetaMask.",
   },
 ];
 

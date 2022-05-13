@@ -13,7 +13,7 @@ const App = () => {
         <Route path="/" element={<Layout />}>
           <Route index element={<Main />} />
           <Route path="/test" element={<SnapGrid />} />
-          <Route path="/snap" element={<SnapDetails />} />
+          <Route path="/snap/:id" element={<SnapDetails />} />
           <Route path="*" element={<NoMatch />} />
         </Route>
       </Routes>

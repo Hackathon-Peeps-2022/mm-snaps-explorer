@@ -3,6 +3,9 @@ import React from "react";
 import styled from "styled-components";
 import { transparentize } from "polished";
 import InstallButton from "../components/atoms/InstallButton";
+import { useParams } from "react-router-dom";
+import NoMatch from "./NoMatch";
+import { getSnapById } from "../utils/MockSnaps";
 
 const Wrap = styled.div`
   max-width: 800px;
@@ -40,11 +43,23 @@ const Votes = styled.div`
 
 
 const SnapDetails = () => {
+  let { id } = useParams();
+
+  if (!id) {
+    return <NoMatch />;
+  }
+
+  let snap = getSnapById(id);
+
+  if (!snap) {
+    return <NoMatch />;
+  }
+
   return (
     <Wrap>
-      <img src={fil} alt="Filecoin Logo" />
-      <Name>Filsnap</Name>
-      <Description>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vel nisl, at posuere ac faucibus vel suspendisse.</Description>
+      <img src={snap.iconUrl} alt={snap.name} />
+      <Name>{snap.name}</Name>
+      <Description>{snap.description}</Description>
       <InstallButton />
       <Votes>Votes blah blah | Rating blah blah | Category blah blah</Votes>
     </Wrap>
