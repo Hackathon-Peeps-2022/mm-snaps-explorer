@@ -6,8 +6,6 @@ import { transparentize } from "polished";
 import InstallButton from "../atoms/InstallButton";
 import Vote from "../molecules/Vote";
 
-import fil from "../../assets/icons/fil.svg";
-
 const Wrap = styled.div`
   border: 1px solid red;
   background-color: #f2f4f6;
@@ -41,16 +39,16 @@ const Wrap = styled.div`
   }
 `;
 
-const SnapItem = () => {
+const SnapItem = (props) => {
   // Rough for rn
   // Make sure snapItem also has params to pass in
   // const { name, img, description } = snapItem
   return (
     <Wrap>
       <Vote />
-      <img src={fil} alt="Filecoin Logo" />
-      <p>Filecoin Snap</p>
-      <p>Filecoin Snap Description</p>
+      <img src={props.iconUrl} alt="Filecoin Logo" />
+      <p>{props.title}</p>
+      <p>{props.description}</p>
       <InstallButton />
     </Wrap>
   );
