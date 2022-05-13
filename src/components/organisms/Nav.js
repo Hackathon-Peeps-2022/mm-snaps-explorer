@@ -27,7 +27,6 @@ const Nav = () => {
         <FilterLink category="coin" name="Filter 1" icon={nft} />
         <FilterLink category="utility" name="Filter 2" icon={iconStars} />
       </div>
-      <MenuLink link="snap" name="Snap Details Test" icon={categories} />
     </nav>
   );
 };

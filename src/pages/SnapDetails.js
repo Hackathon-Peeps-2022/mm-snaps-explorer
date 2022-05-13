@@ -55,7 +55,7 @@ const SnapDetails = () => {
   return (
     <Wrap>
       <img src={snap.iconUrl} alt={snap.name} />
-      <Name>{snap.name}</Name>
+      <Name>{snap.title}</Name>
       <Description>{snap.description}</Description>
       <InstallButton />
       <Votes>Votes blah blah | Rating blah blah | Category blah blah</Votes>
