@@ -22,7 +22,7 @@ const SnapGrid = () => {
         }}
       >
         {snaps.map((snap) => {
-          let name = `${snap.creator} ${snap.installation} ${snap.title}`;
+          let name = `TODO creator from npm API ${snap.installation} ${snap.title}`;
           return (
             <div
               key={snap.id}
