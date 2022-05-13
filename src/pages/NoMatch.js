@@ -1,4 +1,4 @@
-const AnotherPage = () => {
+const NoMatch = () => {
   return (
     <>
       <img
@@ -9,4 +9,4 @@ const AnotherPage = () => {
   );
 };
 
-export default AnotherPage;
+export default NoMatch;
