@@ -40,14 +40,14 @@ const GlobalStyles = createGlobalStyle`
 			box-sizing: border-box;
 			overflow: scroll;
 			grid-template-columns: 14vw auto;
-			grid-template-rows: 80px auto fit-content;
+			grid-template-rows: 80px auto auto;
 			gap: 1em;
 			grid-template-areas:
 				"header header"
 				"nav main"
 				"nav footer";
 			@media (min-width: 1500px) {
-				grid-template-rows: 80px auto fit-content;
+				grid-template-rows: 80px auto auto;
 				grid-template-columns: 14vw auto;
 				justify-items: stretch;
 			}
