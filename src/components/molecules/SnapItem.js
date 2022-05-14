@@ -48,10 +48,10 @@ const SnapItem = ({ name, description, logo }) => {
   return (
     <Wrap>
       <Vote />
-       <img src={logo} alt="Snap Logo" />
-       <p>{name}</p>
-       <p>{description}</p>
-       <InstallButton />
+      <img src={logo} alt="Snap Logo" />
+      <p>{name}</p>
+      <p>{description}</p>
+      <InstallButton />
     </Wrap>
   );
 };

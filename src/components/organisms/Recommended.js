@@ -2,8 +2,8 @@ import React, { useEffect, useState } from "react";
 
 import styled from "styled-components";
 import SnapItem from "../molecules/SnapItem";
-import MetamaskSnapsExplorer from '../../contracts/MetamaskSnapsExplorer.json';
-import { ethers } from 'ethers';
+import MetamaskSnapsExplorer from "../../contracts/MetamaskSnapsExplorer.json";
+import { ethers } from "ethers";
 
 const Wrap = styled.div`
   height: fit-content;
@@ -23,9 +23,11 @@ const Recommended = () => {
   const [snaps, setSnaps] = useState([]);
 
   const contract = new ethers.Contract(
-    '0x8eb6961708Be3684Da35B617a4Ec8e7bdefCB4D5',
+    "0x8eb6961708Be3684Da35B617a4Ec8e7bdefCB4D5",
     MetamaskSnapsExplorer.abi,
-    ethers.getDefaultProvider('https://rinkeby.infura.io/v3/d509fb5c95c04ae49799a35691d3d7bc')
+    ethers.getDefaultProvider(
+      "https://rinkeby.infura.io/v3/d509fb5c95c04ae49799a35691d3d7bc"
+    )
   );
 
   const listSnaps = async () => {
@@ -45,12 +47,14 @@ const Recommended = () => {
     }
 
     const snapItems = snaps.map((snap) => {
-      return <SnapItem
-        key={snap[0]}
-        name={snap[2]}
-        description={snap[4]}
-        logo={snap[6]}
-      />
+      return (
+        <SnapItem
+          key={snap[0]}
+          name={snap[2]}
+          description={snap[4]}
+          logo={snap[6]}
+        />
+      );
     });
 
     return snapItems;
@@ -63,9 +67,7 @@ const Recommended = () => {
   return (
     <Wrap>
       <h2>Available Snaps</h2>
-      <div>
-        { isLoading? <h3>Loading...</h3> : renderSnaps() }
-      </div>
+      <div>{isLoading ? <h3>Loading...</h3> : renderSnaps()}</div>
     </Wrap>
   );
 };

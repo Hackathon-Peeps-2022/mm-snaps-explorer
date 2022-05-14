@@ -7,7 +7,7 @@ const Main = ({ snaps }) => {
     <>
       <TopBanner />
       <Featured />
-      <Recommended snaps={snaps}/>
+      <Recommended snaps={snaps} />
     </>
   );
 };

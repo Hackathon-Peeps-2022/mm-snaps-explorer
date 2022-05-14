@@ -1,18 +1,18 @@
 import React, { useContext } from "react";
 
-import { isMobile } from 'react-device-detect';
+import { isMobile } from "react-device-detect";
 import mmbrand from "../../assets/mm_brand.svg";
 import Button from "../atoms/Button";
-import { EthProvider } from '../../ethereum';
-import Account from '../atoms/Account';
+import { EthProvider } from "../../ethereum";
+import Account from "../atoms/Account";
 
 const Header = () => {
   const { provider, user } = useContext(EthProvider);
   const { address } = user;
-  
+
   const checkConnection = () => {
     switch (true) {
-      case provider && address !== '':
+      case provider && address !== "":
         return <Account />;
       case provider !== null:
       case provider && isMobile:
@@ -23,7 +23,7 @@ const Header = () => {
       default:
         return null;
     }
-  }
+  };
 
   return (
     <header>

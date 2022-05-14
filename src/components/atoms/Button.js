@@ -1,8 +1,8 @@
 import React, { useContext } from "react";
 import styled from "styled-components";
 import fox from "../../assets/fox.svg";
-import { EthProvider } from '../../ethereum';
-import { tap, hover } from '../../theme/FramerVariants.js'
+import { EthProvider } from "../../ethereum";
+import { tap, hover } from "../../theme/FramerVariants.js";
 
 const Wrap = styled.button`
   border: 1px solid #bbc0c5;
@@ -26,10 +26,7 @@ const Button = ({ children, icon = null }) => {
   const icons = { fox };
 
   return (
-    <Wrap
-      onClick={() => connect()}
-      whileHover={hover}
-      whileTap={tap}>
+    <Wrap onClick={() => connect()} whileHover={hover} whileTap={tap}>
       {icon && <img src={icons[icon]} alt="" />}
       {children}
     </Wrap>
