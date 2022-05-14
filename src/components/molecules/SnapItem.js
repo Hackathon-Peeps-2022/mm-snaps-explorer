@@ -5,7 +5,6 @@ import { transparentize } from "polished";
 
 import InstallButton from "../atoms/InstallButton";
 import Vote from "../molecules/Vote";
-import { Link } from "react-router-dom";
 
 const Wrap = styled.div`
   border: 1px solid red;
