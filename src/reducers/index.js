@@ -5,7 +5,7 @@ export const reducer = (state, action) => {
         state.signer = action.payload.signer;
         state.name = action.payload.name;
         state.chainId = action.payload.chainId;
-        state.contracts.explorer = action.payload.contract;
+        state.contract = action.payload.contract;
         return;
       }
   
@@ -20,7 +20,7 @@ export const reducer = (state, action) => {
       }
   
       case 'CONNECTED_CONTRACTS': {
-        state.contracts.explorer = action.payload;
+        state.contract = action.payload;
         return
       }
   

@@ -41,7 +41,7 @@ const Wrap = styled.div`
   }
 `;
 
-const SnapItem = () => {
+const SnapItem = (name, description) => {
   // Rough for rn
   // Make sure snapItem also has params to pass in
   // const { name, img, description } = snapItem
@@ -49,8 +49,8 @@ const SnapItem = () => {
     <Wrap>
       <Vote />
       <img src={fil} alt="Filecoin Logo" />
-      <p>Filecoin Snap</p>
-      <p>Filecoin Snap Description</p>
+      <p>{name}</p>
+      <p>{description}</p>
       <InstallButton />
     </Wrap>
   );

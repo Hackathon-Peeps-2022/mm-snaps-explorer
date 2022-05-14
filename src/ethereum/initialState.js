@@ -1,7 +1,5 @@
 export const initialState = {
-    contracts: {
-      explorer: null,
-    },
+    contract: null,
     isLoading: true,
     isConnected: false,
     name: null,

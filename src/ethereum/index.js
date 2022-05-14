@@ -23,7 +23,7 @@ export const Provider = ({ children }) => {
     } else {
       dispatch({ type: 'SET_ACCOUNT', payload: initialState.user });
     }
-  }, [dispatch])
+  }, [dispatch]);
 
   const connectUser = useCallback(async () => {
     try {
