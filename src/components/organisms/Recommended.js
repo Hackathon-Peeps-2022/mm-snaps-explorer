@@ -3,6 +3,7 @@ import React from "react";
 import styled from "styled-components";
 
 import SnapItem from "../molecules/SnapItem";
+import { getSnapById } from "../../utils/MockSnaps";
 
 const Wrap = styled.div`
   height: fit-content;
@@ -18,11 +19,13 @@ const Wrap = styled.div`
 `;
 
 const Recommended = () => {
+  const someSnap = getSnapById("1");
+
   return (
     <Wrap>
       <h2>Recommended Snaps</h2>
       <div>
-        <SnapItem />
+        <SnapItem {...someSnap} />
       </div>
     </Wrap>
   );

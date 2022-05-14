@@ -5,6 +5,7 @@ import { transparentize } from "polished";
 
 import InstallButton from "../atoms/InstallButton";
 import Vote from "../molecules/Vote";
+import { Link } from "react-router-dom";
 
 const Wrap = styled.div`
   border: 1px solid red;
@@ -21,6 +22,11 @@ const Wrap = styled.div`
   > img {
     grid-area: img;
     height: 40px;
+  }
+  a {
+    text-decoration: none;
+    color: #24292e;
+    letter-spacing: 0.75px;
   }
   p {
     padding: 0;
@@ -47,7 +53,9 @@ const SnapItem = (props) => {
     <Wrap>
       <Vote />
       <img src={props.iconUrl} alt="Filecoin Logo" />
-      <p>{props.title}</p>
+      <p>
+        <Link to={`/snap/${props.id}`}>{props.title}</Link>
+      </p>
       <p>{props.description}</p>
       <InstallButton />
     </Wrap>

@@ -61,6 +61,4 @@ function getSnapById(id) {
   return SNAPS.find((snap) => snap.id === id);
 }
 
-let brands = [...new Set(SNAPS.map((snap) => snap.brand))];
-
-export { brands, SNAPS, filterByCategory, getSnapById };
+export { SNAPS, filterByCategory, getSnapById };

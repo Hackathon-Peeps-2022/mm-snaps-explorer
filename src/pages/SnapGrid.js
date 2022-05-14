@@ -35,6 +35,7 @@ const SnapGrid = () => {
           return (
             <SnapItem
               key={snap.id}
+              id={snap.id}
               title={snap.title}
               description={snap.description}
               iconUrl={snap.iconUrl}
