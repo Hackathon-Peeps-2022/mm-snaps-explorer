@@ -141,6 +141,10 @@ const GlobalStyles = createGlobalStyle`
 			display: grid;
 		}
 	}
+
+	form {
+		border: 1px solid red;
+	}
 `;
 
 export default GlobalStyles;
