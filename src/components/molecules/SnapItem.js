@@ -52,12 +52,12 @@ const SnapItem = (props) => {
   return (
     <Wrap>
       <Vote />
-      <img src={props.iconUrl} alt="Filecoin Logo" />
+      <img src={props.iconUrl} alt={props.title} />
       <p>
         <Link to={`/snap/${props.id}`}>{props.title}</Link>
       </p>
       <p>{props.description}</p>
-      <InstallButton />
+      <InstallButton installation={props.installation} />
     </Wrap>
   );
 };

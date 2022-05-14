@@ -14,10 +14,28 @@ const Container = styled.button`
   font-family: "Euclid", serif;
 `;
 
-const InstallButton = () => {
+const InstallButton = ({installation}) => {
   // onClick function that calls the wallet_enable json-rpc method
 
-  return <Container>Install</Container>;
+  return <Container onClick={() => installSnap(installation)}>Install</Container>;
 };
+
+async function installSnap(installation) {
+  const path = `npm:${installation}`;
+
+  /* global ethereum */
+  await ethereum.request({
+    method: "wallet_enable",
+    params: [
+      {
+        wallet_snap: {
+          [path]: {
+            version: "latest",
+          },
+        },
+      },
+    ],
+  });
+}
 
 export default InstallButton;
