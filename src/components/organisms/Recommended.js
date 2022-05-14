@@ -49,6 +49,7 @@ const Recommended = () => {
         key={snap[0]}
         name={snap[2]}
         description={snap[4]}
+        logo={snap[6]}
       />
     });
 

@@ -45,11 +45,11 @@ const Wrap = styled.div`
   }
 `;
 
-const SnapItem = ({ name, description }) => {
+const SnapItem = ({ name, description, logo }) => {
   return (
     <Wrap>
       <Vote />
-       <img src={fil} alt="Filecoin Logo" />
+       <img src={logo} alt="Snap Logo" />
        <p>{name}</p>
        <p>{description}</p>
        <InstallButton />
