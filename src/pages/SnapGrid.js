@@ -1,7 +1,22 @@
 import * as React from "react";
-import { Link, useSearchParams } from "react-router-dom";
+import { useSearchParams } from "react-router-dom";
 import { filterByCategory, SNAPS } from "../utils/MockSnaps";
-import VisuallyHidden from "@reach/visually-hidden";
+import TopBanner from "../components/organisms/TopBanner";
+import SnapItem from "../components/molecules/SnapItem";
+import styled from "styled-components";
+
+const Wrap = styled.div`
+  display: flex;
+  flex-direction: column;
+`;
+
+const Snaps = styled.div`
+  height: fit-content;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+  gap: 12px;
+  padding-top: 30px;
+`;
 
 const SnapGrid = () => {
   let [searchParams] = useSearchParams();
@@ -13,47 +28,14 @@ const SnapGrid = () => {
   }, [category]);
 
   return (
-    <>
-      <div
-        style={{
-          display: "grid",
-          gridTemplateColumns: "repeat(auto-fill, minmax(200px, 1fr))",
-          gap: "12px 24px",
-        }}
-      >
+    <Wrap>
+      <TopBanner />
+      <Snaps>
         {snaps.map((snap) => {
-          let name = `${snap.creator} ${snap.installation} ${snap.title}`;
-          return (
-            <div
-              key={snap.id}
-              style={{ position: "relative", border: "1px dashed red" }}
-            >
-              <img
-                width={100}
-                height={100}
-                src={snap.iconUrl}
-                alt={name}
-                style={{
-                  borderRadius: "8px",
-                  width: "100%",
-                  height: "auto",
-                  aspectRatio: "1 / 1",
-                }}
-              />
-              <Link
-                style={{ position: "absolute", inset: 0 }}
-                to={`/snap/${snap.id}`}
-              >
-                <VisuallyHidden>{name}</VisuallyHidden>
-              </Link>
-              <div>
-                <p>{name}</p>
-              </div>
-            </div>
-          );
+          return <SnapItem key={snap.id} {...snap} />;
         })}
-      </div>
-    </>
+      </Snaps>
+    </Wrap>
   );
 };
 
