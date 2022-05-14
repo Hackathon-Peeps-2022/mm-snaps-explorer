@@ -46,6 +46,11 @@ export const reducer = (state, action) => {
         state.user.allowance = action.payload.allowance;
         return;
       }
+
+      case 'SET_SNAPS': {
+          state.snaps = action.payload.snaps;
+          return;
+      }
   
       default: break;
     }
