@@ -2,12 +2,12 @@ import TopBanner from "../components/organisms/TopBanner";
 import Featured from "../components/organisms/Featured";
 import Recommended from "../components/organisms/Recommended";
 
-const Main = () => {
+const Main = ({ snaps }) => {
   return (
     <>
       <TopBanner />
       <Featured />
-      <Recommended />
+      <Recommended snaps={snaps} />
     </>
   );
 };
