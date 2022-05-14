@@ -14,10 +14,12 @@ const Container = styled.button`
   font-family: "Euclid", serif;
 `;
 
-const InstallButton = ({installation}) => {
+const InstallButton = ({ installation }) => {
   // onClick function that calls the wallet_enable json-rpc method
 
-  return <Container onClick={() => installSnap(installation)}>Install</Container>;
+  return (
+    <Container onClick={() => installSnap(installation)}>Install</Container>
+  );
 };
 
 async function installSnap(installation) {

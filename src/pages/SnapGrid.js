@@ -32,12 +32,7 @@ const SnapGrid = () => {
       <TopBanner />
       <Snaps>
         {snaps.map((snap) => {
-          return (
-            <SnapItem
-              key={snap.id}
-              {...snap}
-            />
-          );
+          return <SnapItem key={snap.id} {...snap} />;
         })}
       </Snaps>
     </Wrap>
