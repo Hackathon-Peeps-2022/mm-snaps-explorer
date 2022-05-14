@@ -61,7 +61,6 @@ const ImageGrid = styled.div`
     object-fit: cover;
   }
   height: fit-content;
-  display: grid;
   grid-template-columns: repeat(auto-fill, 400px);
   gap: 1em;
   padding-top: 20px;
@@ -75,11 +74,9 @@ const SnapDetails = () => {
       `https://api.npms.io/v2/package/${encodeURIComponent(snap.installation)}`
     )
       .then((res) => res.json())
-      .then(
-        (result) => {
-          setItems(result);
-        }
-      );
+      .then((result) => {
+        setItems(result);
+      });
   });
 
   let { id } = useParams();
@@ -104,9 +101,27 @@ const SnapDetails = () => {
         <Votes>Votes blah blah | Rating blah blah | Category blah blah</Votes>
       </Wrap>
       <ImageGrid>
-        <img src={`/snap-images/${snap.title}-1.png`} alt={snap.name} onError={(event)=>event.target.setAttribute("style","display:none")} />
-        <img src={`/snap-images/${snap.title}-2.png`} alt={snap.name} onError={(event)=>event.target.setAttribute("style","display:none")} />
-        <img src={`/snap-images/${snap.title}-3.png`} alt={snap.name} onError={(event)=>event.target.setAttribute("style","display:none")} />
+        <img
+          src={`/snap-images/${snap.title}-1.png`}
+          alt={snap.name}
+          onError={(event) =>
+            event.target.setAttribute("style", "display:none")
+          }
+        />
+        <img
+          src={`/snap-images/${snap.title}-2.png`}
+          alt={snap.name}
+          onError={(event) =>
+            event.target.setAttribute("style", "display:none")
+          }
+        />
+        <img
+          src={`/snap-images/${snap.title}-3.png`}
+          alt={snap.name}
+          onError={(event) =>
+            event.target.setAttribute("style", "display:none")
+          }
+        />
       </ImageGrid>
       <h3>Details</h3>
       <FlexyRow>
