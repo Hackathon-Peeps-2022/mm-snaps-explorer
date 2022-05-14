@@ -15,5 +15,6 @@ export const initialState = {
       avatar: null,
       allowance: 0,
       balance: 0
-    }
+    },
+    snaps: []
 }

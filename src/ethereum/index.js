@@ -13,7 +13,10 @@ export const Provider = ({ children }) => {
   const setAccount = useCallback(async (provider, accounts, networkName, chainId, contract) => {
     if (accounts.length > 0) {
       try {
-        dispatch({ type: 'SET_ACCOUNT', payload: {} });
+        const connectedAccount = {
+            address: accounts[0],
+        };
+        dispatch({ type: 'SET_ACCOUNT', payload: connectedAccount });
       } catch (e) {
         console.log(e);
       }
