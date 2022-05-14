@@ -2,26 +2,52 @@ let SNAPS = [
   {
     id: "1",
     title: "Filsnap",
-    creator: "ChainSafe",
-    category: "Coin",
-    installation: "npm:@chainsafe/filsnap",
+    category: "Protocol",
+    installation: "@chainsafe/filsnap",
     iconUrl:
       "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/filecoin/info/logo.png",
-    version: "latest",
-    website: "https://github.com/ChainSafe/filsnap",
-    describution: "Metamask snap to interact with Filecoin dapps.",
+    dapp: "https://filsnap.chainsafe.io/",
+    description: "MetaMask snap for interacting with Filecoin dapps.",
   },
   {
     id: "2",
     title: "AleoSnap",
-    creator: "piotr",
     category: "Utility",
-    installation: "npm:aleo-snap",
+    installation: "aleo-snap",
     iconUrl:
       "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/ethereum/info/logo.png",
-    version: "latest",
-    website: "https://github.com/piotr-roslaniec/ethdenver-2022",
-    describution: "Access Aleo network from your browser using MetaMask.",
+    dapp: "https://aleo-snap-ethdenver-2022.netlify.app/",
+    description: "Access Aleo network from your browser using MetaMask",
+  },
+  {
+    id: "3",
+    title: "BitcoinSnap",
+    category: "Protocol",
+    installation: "btcsnap",
+    iconUrl:
+      "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/bitcoin/info/logo.png",
+    dapp: "https://btcsnap.netlify.app/",
+    description: "Manage your bitcoin with Metamask Flask and btcsnap",
+  },
+  {
+    id: "4",
+    title: "SnapAlgo",
+    category: "Protocol",
+    installation: "algorand",
+    iconUrl:
+      "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/algorand/info/logo.png",
+    dapp: "https://snapalgo.com/",
+    description: "Adds the algorand cryptocurrency to metamask",
+  },
+  {
+    id: "5",
+    title: "MinaSnap",
+    category: "Protocol",
+    installation: "@chainsafe/minasnap",
+    iconUrl:
+      "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/ethereum/info/logo.png",
+    dapp: "https://chainsafe.github.io/mina-snap/",
+    description: "Metamask snap for interacting with mina procotol",
   },
 ];
 
@@ -35,6 +61,4 @@ function getSnapById(id) {
   return SNAPS.find((snap) => snap.id === id);
 }
 
-let brands = [...new Set(SNAPS.map((snap) => snap.brand))];
-
-export { brands, SNAPS, filterByCategory, getSnapById };
+export { SNAPS, filterByCategory, getSnapById };

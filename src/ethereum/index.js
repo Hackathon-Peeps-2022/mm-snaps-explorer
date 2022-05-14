@@ -65,7 +65,7 @@ export const Provider = ({ children }) => {
     }
   }, [connectUser, dispatch]);
 
-  const { contracts, isLoading, isConnected, name, chainId, provider, user, web3Error } = state;
+  const { contract, isLoading, isConnected, name, chainId, provider, user, web3Error } = state;
 
   const connect = async () => {
     try {
@@ -76,12 +76,22 @@ export const Provider = ({ children }) => {
     }
   }
 
+  const listSnaps = async () => {
+    const snaps = [];
+    const numberOfSnaps = await contract.getNumberOfSnaps();
+    for (let i = 0; i < numberOfSnaps.toNumber(); i++) {
+      const snap = await contract.getSnap(i);
+      snaps.push(snap);
+    }
+    return snaps;
+  };
+
   return (
     <EthProvider.Provider
       value={{
         state,
         dispatch,
-        contracts,
+        contract,
         isLoading,
         isConnected,
         provider,
@@ -89,7 +99,7 @@ export const Provider = ({ children }) => {
         web3Error,
         name,
         chainId,
-        actions: { connect }
+        actions: { connect, listSnaps }
       }}>
       {children}
     </EthProvider.Provider>

@@ -5,8 +5,7 @@ import { transparentize } from "polished";
 
 import InstallButton from "../atoms/InstallButton";
 import Vote from "../molecules/Vote";
-
-import fil from "../../assets/icons/fil.svg";
+import { Link } from "react-router-dom";
 
 const Wrap = styled.div`
   border: 1px solid red;
@@ -23,6 +22,11 @@ const Wrap = styled.div`
   > img {
     grid-area: img;
     height: 40px;
+  }
+  a {
+    text-decoration: none;
+    color: #24292e;
+    letter-spacing: 0.75px;
   }
   p {
     padding: 0;
@@ -42,16 +46,13 @@ const Wrap = styled.div`
 `;
 
 const SnapItem = ({ name, description }) => {
-  // Rough for rn
-  // Make sure snapItem also has params to pass in
-  // const { name, img, description } = snapItem
   return (
     <Wrap>
       <Vote />
-      <img src={fil} alt="Filecoin Logo" />
-      <p>{name}</p>
-      <p>{description}</p>
-      <InstallButton />
+       <img src={fil} alt="Filecoin Logo" />
+       <p>{name}</p>
+       <p>{description}</p>
+       <InstallButton />
     </Wrap>
   );
 };
