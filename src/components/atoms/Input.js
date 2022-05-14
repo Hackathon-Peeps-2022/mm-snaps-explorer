@@ -4,9 +4,10 @@ export const UnlabeledInput = () => {
   return <input type="text" placeholder="Search" />;
 };
 
-export const LabeledInput = ({ placeholder, type }) => {
+export const LabeledInput = ({ placeholder, type, label, description }) => {
   return (
-    <label htmlFor="">
+    <label>
+			<p>{label} <span>{description}</span></p>
       <input type={type} placeholder={placeholder} />
     </label>
   );
