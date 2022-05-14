@@ -1,8 +1,9 @@
-import React, { useContext } from "react";
+import React, { useEffect, useState } from "react";
 
 import styled from "styled-components";
 import SnapItem from "../molecules/SnapItem";
-import { EthProvider } from '../../ethereum';
+import MetamaskSnapsExplorer from '../../contracts/MetamaskSnapsExplorer.json';
+import { ethers } from 'ethers';
 
 const Wrap = styled.div`
   height: fit-content;
@@ -18,39 +19,35 @@ const Wrap = styled.div`
 `;
 
 const Recommended = () => {
-  const { provider, state } = useContext(EthProvider);
-  const contract = state.contract;
+  const [isLoading, setIsLoading] = useState(true);
+  const [snaps, setSnaps] = useState([]);
 
-  const checkConnection = () => {
-    switch (true) {
-      case provider:
-        console.log('here');
-        return renderSnaps();
-      default:
-        return <h3>Connect your wallet to interact with the site</h3>;
-    }
-  }
+  const contract = new ethers.Contract(
+    '0x8eb6961708Be3684Da35B617a4Ec8e7bdefCB4D5',
+    MetamaskSnapsExplorer.abi,
+    ethers.getDefaultProvider('https://rinkeby.infura.io/v3/d509fb5c95c04ae49799a35691d3d7bc')
+  );
 
   const listSnaps = async () => {
-    const snaps = [];
+    const snapList = [];
     const numberOfSnaps = await contract.getNumberOfSnaps();
     for (let i = 0; i < numberOfSnaps; i++) {
       const snap = await contract.getSnap(i);
-      snaps.add(snap);
+      snapList.push(snap);
     }
-    return snaps;
+    setSnaps(snapList);
+    setIsLoading(false);
   };
 
   const renderSnaps = () => {
-    const snaps = listSnaps();
     if (snaps.length === 0) {
-      return (<h3>No snaps listed yet</h3>);
+      return <h3>No snaps listed yet</h3>;
     }
 
     const snapItems = snaps.map((snap) => {
       return <SnapItem
         key={snap[0]}
-        name={snap[1]}
+        name={snap[2]}
         description={snap[4]}
       />
     });
@@ -58,11 +55,15 @@ const Recommended = () => {
     return snapItems;
   };
 
+  useEffect(() => {
+    listSnaps();
+  });
+
   return (
     <Wrap>
-      <h2>Recommended Snaps</h2>
+      <h2>Available Snaps</h2>
       <div>
-        {checkConnection()}
+        { isLoading? <h3>Loading...</h3> : renderSnaps() }
       </div>
     </Wrap>
   );

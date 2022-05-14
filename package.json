@@ -46,7 +46,8 @@
     "lint:react": "eslint './src/**/*.js'",
     "lint:misc": "prettier --check './src/**/*.js'",
     "sit-pretty": "prettier --write './src/**/*.js'",
-    "lint": "yarn lint:css && yarn lint:react && yarn lint:misc"
+    "lint": "yarn lint:css && yarn lint:react && yarn lint:misc",
+    "bribe": "echo you are gonna have to do better than that if you want me to play nice"
   },
   "eslintConfig": {
     "extends": [

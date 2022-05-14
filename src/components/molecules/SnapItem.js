@@ -41,7 +41,7 @@ const Wrap = styled.div`
   }
 `;
 
-const SnapItem = (name, description) => {
+const SnapItem = ({ name, description }) => {
   // Rough for rn
   // Make sure snapItem also has params to pass in
   // const { name, img, description } = snapItem
