@@ -11,11 +11,14 @@ const Wrap = styled.div`
     margin: 0;
     padding: 0;
   }
-  > div {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-  }
+`;
+
+const Snaps = styled.div`
+  height: fit-content;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 400px);
+  gap: 12px;
+  padding-top: 30px;
 `;
 
 const Recommended = () => {
@@ -23,7 +26,7 @@ const Recommended = () => {
   const [snaps, setSnaps] = useState([]);
 
   const contract = new ethers.Contract(
-    "0x8eb6961708Be3684Da35B617a4Ec8e7bdefCB4D5",
+    "0x9dA6F8a65b7fc0381b8d4e943C6E31DBB83BE74C",
     MetamaskSnapsExplorer.abi,
     ethers.getDefaultProvider(
       "https://rinkeby.infura.io/v3/d509fb5c95c04ae49799a35691d3d7bc"
@@ -50,9 +53,13 @@ const Recommended = () => {
       return (
         <SnapItem
           key={snap[0]}
+          id={snap[0]}
           name={snap[2]}
-          description={snap[4]}
-          logo={snap[6]}
+          installation={snap[4]}
+          description={snap[7]}
+          logo={snap[5]}
+          upvotes={snap[8].toNumber()}
+          downvotes={snap[9].toNumber()}
         />
       );
     });
@@ -62,12 +69,12 @@ const Recommended = () => {
 
   useEffect(() => {
     listSnaps();
-  });
+  }, []); // eslint-disable-line
 
   return (
     <Wrap>
       <h2>Available Snaps</h2>
-      <div>{isLoading ? <h3>Loading...</h3> : renderSnaps()}</div>
+      <Snaps>{isLoading ? <h3>Loading...</h3> : renderSnaps()}</Snaps>
     </Wrap>
   );
 };

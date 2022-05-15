@@ -17,15 +17,10 @@ const Nav = () => {
       <SearchBar />
       <MenuLink link="/" name="Categories" icon={categories} />
       <div style={{ position: "relative", left: "10px" }}>
-        <MenuLink link="/a" name="NFTs" icon={nft} />
+        <FilterLink category="nfts" name="NFTs" icon={nft} />
         <MenuLink link="/b" name="Best Rated" icon={iconStars} />
-        <MenuLink link="/c" name="Utilities" icon={box} />
-        <MenuLink link="/d" name="Protocols" icon={protocols} />
-      </div>
-      <MenuLink link="test" name="Test All Snaps" icon={categories} />
-      <div style={{ position: "relative", left: "10px" }}>
-        <FilterLink category="protocol" name="Filter 1" icon={nft} />
-        <FilterLink category="utility" name="Filter 2" icon={iconStars} />
+        <FilterLink category="utility" name="Utilities" icon={box} />
+        <FilterLink category="protocol" name="Protocols" icon={protocols} />
       </div>
     </nav>
   );

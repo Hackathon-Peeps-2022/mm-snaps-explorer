@@ -23,24 +23,24 @@ const Featured = () => {
   const bgColors = ["#36bfc5", "#00a3fe", "#fa004b", "#5303f7"];
   const featuredSnaps = [
     {
-      name: "Snap Name",
+      name: "BitcoinSnap",
       img: img,
-      description: "Description of Snap",
+      description: "Manage your bitcoin with Metamask Flask and btcsnap",
     },
     {
-      name: "Snap Name",
+      name: "SnapAlgo",
       img: img2,
-      description: "Description of Snap",
+      description: "Adds the algorand cryptocurrency to metamask",
     },
     {
-      name: "Snap Name",
+      name: "Filsnap",
       img: img3,
-      description: "Description of Snap",
+      description: "Adds the algorand cryptocurrency to metamask",
     },
     {
-      name: "Snap Name",
+      name: "AleoSnap",
       img: img4,
-      description: "Description of Snap",
+      description: "Access Aleo network from your browser using MetaMask",
     },
   ];
   return (
