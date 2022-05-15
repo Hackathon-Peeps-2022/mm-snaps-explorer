@@ -8,7 +8,9 @@ export const LabeledInput = ({ placeholder, type, label, description }) => {
   return (
     <label>
 			<p>{label} <span>{description}</span></p>
-      <input type={type} placeholder={placeholder} />
+      <input type={type} placeholder={placeholder} required />
     </label>
   );
 };
+
+// Textarea
