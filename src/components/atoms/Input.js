@@ -5,7 +5,13 @@ export const UnlabeledInput = () => {
 };
 
 // Make this a conditional for the type, then just drill the props in :clown
-export const LabeledInput = ({ placeholder, type, label, description }) => {
+export const LabeledInput = ({
+  placeholder,
+  type,
+  label,
+  description,
+  onChange,
+}) => {
   switch (type) {
     case "number":
       return (
@@ -17,6 +23,7 @@ export const LabeledInput = ({ placeholder, type, label, description }) => {
             type="number"
             placeholder={placeholder}
             required
+            onChange={onChange}
             // Wonky logic here
             step="0.01"
           />
@@ -30,18 +37,28 @@ export const LabeledInput = ({ placeholder, type, label, description }) => {
           <p>
             {label} <span>{description}</span>
           </p>
-          <input type={type} placeholder={placeholder} required />
+          <input
+            type={type}
+            placeholder={placeholder}
+            required
+            onChange={onChange}
+          />
         </label>
       );
   }
 };
 
 // Textarea
-export const TextArea = () => {
+export const TextArea = ({ onChange }) => {
   return (
     <label htmlFor="">
       <p>Snap Description (Up to 1000 Characters)</p>
-      <textarea required maxLength="1000" name="description" />
+      <textarea
+        required
+        maxLength="1000"
+        name="description"
+        onChange={onChange}
+      />
     </label>
   );
 };

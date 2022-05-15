@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 
 import Jazzicon, { jsNumberForAddress } from "react-jazzicon";
-import styled, { css } from "styled-components";
+import styled from "styled-components";
 
 import { EthProvider } from "../../ethereum";
 import { formatAddress } from "../../utils";

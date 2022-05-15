@@ -1,7 +1,7 @@
-import React, { useState } from "react";
+import React from "react";
 
 import { transparentize } from "polished";
-import styled, { css } from "styled-components";
+import styled from "styled-components";
 
 const Wrap = styled.div`
   grid-area: category;
@@ -34,7 +34,6 @@ const CategorySelector = ({
   selectedCategory,
   setSelectedCategory,
 }) => {
-  console.log(selectedCategory);
   return (
     <Wrap>
       <p>

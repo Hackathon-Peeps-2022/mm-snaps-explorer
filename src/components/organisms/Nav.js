@@ -4,6 +4,7 @@ import SearchBar from "../molecules/SearchBar";
 
 import MenuLink from "../atoms/MenuLink";
 
+import add from "../../assets/add.svg";
 import categories from "../../assets/categories.svg";
 import nft from "../../assets/nft.svg";
 import iconStars from "../../assets/icon_stars.svg";
@@ -21,6 +22,7 @@ const Nav = () => {
         <MenuLink link="/b" name="Best Rated" icon={iconStars} />
         <FilterLink category="utility" name="Utilities" icon={box} />
         <FilterLink category="protocol" name="Protocols" icon={protocols} />
+        <MenuLink link="/add-snap" name="Add New Snap" icon={add} />
       </div>
     </nav>
   );
