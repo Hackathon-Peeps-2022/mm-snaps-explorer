@@ -146,6 +146,8 @@ const GlobalStyles = createGlobalStyle`
 	form {
 		fieldset {
 			display: grid;
+			width: 60%;
+			margin: 0 auto;
 			grid-template-areas:
 				'snapLink snapName'
 				'githubLink offeredBy'
@@ -159,7 +161,7 @@ const GlobalStyles = createGlobalStyle`
 				display: flex;
 				flex-direction: column;
 				height: fit-content;
-				width: fit-content;
+				gap: 0.5em;
 				p {
 					padding: 0;
 					margin: 0;
@@ -176,12 +178,20 @@ const GlobalStyles = createGlobalStyle`
 					outline: none;
 				}
 				input {
-
 					width: 300px;
 					padding: 0.5em;
 					font-size: 1.1em;
 				}
+				textarea {
+				  resize: none;
+					height: 200px;
+					font-family: 'Euclid', serif;
+					width: 100%;
+				}
 			}
+			/*
+				Marvelous, innit?
+			*/
 			label:first-of-type { grid-area: snapLink; }
 			label:nth-of-type(2) { grid-area: snapName; }
 			label:nth-of-type(3) { grid-area: githubLink; }
@@ -209,7 +219,8 @@ const GlobalStyles = createGlobalStyle`
 		color: #fff;
 		grid-area: submit;
 		width: fit-content;
-		padding: 0 2em;
+		padding: 0.5em 2em;
+		justify-self: end;
 	}
 `;
 

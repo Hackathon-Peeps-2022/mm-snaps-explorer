@@ -1,10 +1,18 @@
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 
 import { LabeledInput as Input, TextArea } from "../components/atoms/Input";
 import CategorySelector from '../components/molecules/CategorySelector'
 
 const AddSnap = () => {
+	const [selectedCategory, setSelectedCategory] = useState('')
 	const formRef = useRef()
+
+	const categories = [
+		"first",
+		"second",
+		"third",
+		"fourth"
+	]
 
 	const inputs = [
 		{
@@ -46,7 +54,7 @@ const AddSnap = () => {
 		},
 		{
 			label: "Snap Image Link",
-			description: "(A jpeg, png, or svg up to 1mb)",
+			description: "(A jpeg, png, or svg)",
 			placeholder: "",
 			type: "text"
 		},
@@ -68,10 +76,15 @@ const AddSnap = () => {
 							type={input.type}
 							placeholder={input.placeholder}
 							label={input.label}
+							key={`input no. ${idx}`}
 							description={input.description}
 						/>
 					)}
-					<CategorySelector />
+					<CategorySelector
+						categories={categories}
+						selectedCategory={selectedCategory}
+						setSelectedCategory={setSelectedCategory}
+					/>
 					<TextArea />
 					<input type="submit"/>
         </fieldset>
