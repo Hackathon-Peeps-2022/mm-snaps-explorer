@@ -1,6 +1,5 @@
 import * as React from "react";
 import { useSearchParams } from "react-router-dom";
-import { filterByCategory, SNAPS } from "../utils/MockSnaps";
 import TopBanner from "../components/organisms/TopBanner";
 import SnapItem from "../components/molecules/SnapItem";
 import styled from "styled-components";
@@ -76,6 +75,7 @@ const SnapGrid = () => {
                 key={snap[0]}
                 id={snap[0]}
                 name={snap[2]}
+                installation={snap[4]}
                 description={snap[7]}
                 logo={snap[5]}
                 upvotes={snap[8].toNumber()}

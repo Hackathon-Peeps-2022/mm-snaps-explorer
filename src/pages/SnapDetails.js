@@ -86,16 +86,6 @@ const SnapDetails = () => {
   const getSnap = async () => {
     try {
       const snap = await contract.getSnap(id);
-      const snapObj = {
-        id,
-        title: snap[2],
-        category: snap.category,
-        installation: snap[4],
-        iconUrl: snap[5],
-        dapp: snap[6],
-        description: snap[7],
-      };
-      console.log(snap);
       setSnap(snap);
       setIsLoading(false);
       fetch(`https://api.npms.io/v2/package/${encodeURIComponent(snap[4])}`)

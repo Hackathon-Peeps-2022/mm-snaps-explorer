@@ -45,7 +45,7 @@ const Wrap = styled.div`
   }
 `;
 
-const SnapItem = ({ id, name, description, logo, upvotes, downvotes }) => {
+const SnapItem = ({ id, name, description, logo, upvotes, downvotes, installation }) => {
   return (
     <Wrap>
       <Vote id={id} upvotes={upvotes} downvotes={downvotes}/>
@@ -54,7 +54,7 @@ const SnapItem = ({ id, name, description, logo, upvotes, downvotes }) => {
         <Link to={`/snap/${id}`}>{name}</Link>
       </p>
       <p>{description}</p>
-      <InstallButton />
+      <InstallButton installation={installation} />
     </Wrap>
   );
 };

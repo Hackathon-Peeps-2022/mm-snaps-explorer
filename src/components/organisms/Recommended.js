@@ -55,6 +55,7 @@ const Recommended = () => {
           key={snap[0]}
           id={snap[0]}
           name={snap[2]}
+          installation={snap[4]}
           description={snap[7]}
           logo={snap[5]}
           upvotes={snap[8].toNumber()}
