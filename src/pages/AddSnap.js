@@ -1,6 +1,7 @@
 import React, { useRef } from "react";
 
-import { LabeledInput as Input } from "../components/atoms/Input";
+import { LabeledInput as Input, TextArea } from "../components/atoms/Input";
+import CategorySelector from '../components/molecules/CategorySelector'
 
 const AddSnap = () => {
 	const formRef = useRef()
@@ -25,17 +26,17 @@ const AddSnap = () => {
 			type: "url"
 		},
 		{
-			label: "Version",
-			description: "",
-			placeholder: "0.0.0",
-			type: "number"
-		},
-		{
 			// Should this be username?
 			label: "Offered By",
 			description: "(Author or Organization)",
 			placeholder: "@username",
 			type: "text"
+		},
+		{
+			label: "Version",
+			description: "",
+			placeholder: "0.0.0",
+			type: "number"
 		},
 		{
 			label: "Website",
@@ -47,7 +48,7 @@ const AddSnap = () => {
 			label: "Snap Image Link",
 			description: "(A jpeg, png, or svg up to 1mb)",
 			placeholder: "",
-			type: "file"
+			type: "text"
 		},
 	]
 
@@ -70,7 +71,8 @@ const AddSnap = () => {
 							description={input.description}
 						/>
 					)}
-          {/* <Input type="text" placeholder="" label="Snap Link" description="" /> */}
+					<CategorySelector />
+					<TextArea />
 					<input type="submit"/>
         </fieldset>
       </form>

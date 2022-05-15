@@ -4,6 +4,7 @@ export const UnlabeledInput = () => {
   return <input type="text" placeholder="Search" />;
 };
 
+// Make this a conditional for the type, then just drill the props in :clown
 export const LabeledInput = ({ placeholder, type, label, description }) => {
   return (
     <label>
@@ -14,3 +15,11 @@ export const LabeledInput = ({ placeholder, type, label, description }) => {
 };
 
 // Textarea
+export const TextArea = () => {
+	return (
+		<label htmlFor="">
+			<p>Snap Description (Up to 1000 Characters)</p>
+			<textarea name=""></textarea>
+		</label>
+	)
+}
