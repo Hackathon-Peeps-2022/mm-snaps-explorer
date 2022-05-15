@@ -1,21 +1,23 @@
 // SPDX-License-Identifier: GPL-3.0
-pragma solidity ^0.8.13;
+pragma solidity 0.8.13;
 
 contract MetamaskSnapsExplorer {
     struct RegisteredSnap {
         uint id;
         address creator;
         string name;
-        string githubLink;
-        string npmPackageLink;
-        string version;
-        string imageURI;
-        string metadataURI;
+        string category;
+        string installation;
+        string iconUrl;
+        string dapp;
+        string description;
         uint upvotes;
         uint downvotes;
     }
 
+    address private owner = msg.sender;
     RegisteredSnap[] _snaps;
+    uint[4] private featuredSnaps = [0, 1, 2, 3];
 
     function getNumberOfSnaps() public view returns (uint) {
         return _snaps.length;
@@ -25,23 +27,27 @@ contract MetamaskSnapsExplorer {
         return _snaps[id];
     }
 
+    function getFeaturedSnaps() public view returns (uint[4] memory) {
+        return featuredSnaps;
+    }
+
     function register(
         string memory name,
-        string memory githubLink,
-        string memory npmPackageLink,
-        string memory version,
-        string memory imageURI,
-        string memory metadataURI
+        string memory category,
+        string memory installation,
+        string memory iconUrl,
+        string memory dapp,
+        string memory description
     ) public {
         RegisteredSnap memory newSnap = RegisteredSnap(
             _snaps.length,
             msg.sender,
             name,
-            githubLink,
-            npmPackageLink,
-            version,
-            imageURI,
-            metadataURI,
+            category,
+            installation,
+            iconUrl,
+            dapp,
+            description,
             0,
             0
         );
@@ -52,21 +58,21 @@ contract MetamaskSnapsExplorer {
     function edit(
         uint id,
         string memory name,
-        string memory githubLink,
-        string memory npmPackageLink,
-        string memory version,
-        string memory imageURI,
-        string memory metadataURI
+        string memory category,
+        string memory installation,
+        string memory iconUrl,
+        string memory dapp,
+        string memory description
     ) public returns (RegisteredSnap memory) {
         RegisteredSnap storage _snap = _snaps[id];
         require(_snap.creator != msg.sender, "You are not allowed to edit this Snap");
     
         _snap.name = name;
-        _snap.githubLink = githubLink;
-        _snap.npmPackageLink = npmPackageLink;
-        _snap.version = version;
-        _snap.imageURI = imageURI;
-        _snap.metadataURI = metadataURI;
+        _snap.category = category;
+        _snap.installation = installation;
+        _snap.iconUrl = iconUrl;
+        _snap.dapp = dapp;
+        _snap.description = description;
 
         return _snap;
     }
@@ -79,4 +85,3 @@ contract MetamaskSnapsExplorer {
         _snaps[id].downvotes++;
     }
 }
-

@@ -35,7 +35,7 @@ export const Provider = ({ children }) => {
         const signer = await provider.getSigner();
         const { name, chainId } = await provider.getNetwork();
         const contract = new ethers.Contract(
-          "0x8eb6961708Be3684Da35B617a4Ec8e7bdefCB4D5",
+          "0x9dA6F8a65b7fc0381b8d4e943C6E31DBB83BE74C",
           MetamaskSnapsExplorer.abi,
           signer
         );
