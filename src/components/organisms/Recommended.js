@@ -74,7 +74,7 @@ const Recommended = () => {
   return (
     <Wrap>
       <h2>Available Snaps</h2>
-        <Snaps>{isLoading ? <h3>Loading...</h3> : renderSnaps()}</Snaps>
+      <Snaps>{isLoading ? <h3>Loading...</h3> : renderSnaps()}</Snaps>
     </Wrap>
   );
 };
