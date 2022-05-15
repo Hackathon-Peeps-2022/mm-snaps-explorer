@@ -22,7 +22,7 @@ const Snaps = styled.div`
 `;
 
 const SnapGrid = () => {
-  const [isLoading, setIsLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState(true); // eslint-disable-line
   const [snaps, setSnaps] = useState([]);
 
   const contract = new ethers.Contract(
@@ -46,22 +46,17 @@ const SnapGrid = () => {
 
   useEffect(() => {
     listSnaps();
-  }, []);
+  }, []); // eslint-disable-line
 
   let [searchParams] = useSearchParams();
   let category = searchParams.get("category");
 
   const filteredSnaps = React.useMemo(() => {
     if (!category) return snaps;
-    return filterByCategory(category);
-  }, [category, snaps]);
-
-  function filterByCategory(category) {
     return snaps.filter(
       (snap) => snap.category.toLowerCase() === category.toLowerCase()
     );
-  }
-
+  }, [category, snaps]);
   return (
     <Wrap>
       <TopBanner />

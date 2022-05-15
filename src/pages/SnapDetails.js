@@ -104,7 +104,7 @@ const SnapDetails = () => {
     }
 
     getSnap(id);
-  }, []);
+  }, []); // eslint-disable-line
 
   return (
     <Flexy>

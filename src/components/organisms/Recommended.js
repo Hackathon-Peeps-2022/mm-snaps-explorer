@@ -69,7 +69,7 @@ const Recommended = () => {
 
   useEffect(() => {
     listSnaps();
-  }, []);
+  }, []); // eslint-disable-line
 
   return (
     <Wrap>
