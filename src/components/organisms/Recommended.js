@@ -65,7 +65,7 @@ const Recommended = () => {
 
   useEffect(() => {
     listSnaps();
-  });
+  }, []);
 
   return (
     <Wrap>
