@@ -11,11 +11,14 @@ const Wrap = styled.div`
     margin: 0;
     padding: 0;
   }
-  > div {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-  }
+`;
+
+const Snaps = styled.div`
+  height: fit-content;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 400px);
+  gap: 12px;
+  padding-top: 30px;
 `;
 
 const Recommended = () => {
@@ -70,7 +73,7 @@ const Recommended = () => {
   return (
     <Wrap>
       <h2>Available Snaps</h2>
-      <div>{isLoading ? <h3>Loading...</h3> : renderSnaps()}</div>
+        <Snaps>{isLoading ? <h3>Loading...</h3> : renderSnaps()}</Snaps>
     </Wrap>
   );
 };
