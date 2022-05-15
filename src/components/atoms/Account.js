@@ -1,21 +1,24 @@
 import React, { useContext } from "react";
 
 import Jazzicon, { jsNumberForAddress } from "react-jazzicon";
-import styled, { css } from "styled-components";
+import styled from "styled-components";
 
 import { EthProvider } from "../../ethereum";
 import { formatAddress } from "../../utils";
 
 const Wrap = styled.div`
   align-items: center;
-  border-radius: 50px;
-  border: 1px solid #000;
+  border: 1px solid #bbc0c5;
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 3px 12px 0px,
+    rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+  border-radius: 25px;
   display: flex;
   background-color: #fff;
   flex-direction: row;
-  box-shadow: rgba(0, 0, 0, 0.15) 0px 3px 8px;
   padding: 0.5em 0.75em;
   p {
+    padding: 0;
+    margin: 0;
     font-size: 16px;
     line-height: 16px;
   }
@@ -34,11 +37,6 @@ const JazziconWrap = styled.div`
     height: 20px;
     width: 20px;
   }
-  ${({ chainId }) =>
-    chainId !== 31337 &&
-    css`
-      border: 1px solid #fe4a4a;
-    `}
 `;
 
 const Account = () => {

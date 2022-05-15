@@ -66,7 +66,7 @@ contract MetamaskSnapsExplorer {
     ) public returns (RegisteredSnap memory) {
         RegisteredSnap storage _snap = _snaps[id];
         require(_snap.creator != msg.sender, "You are not allowed to edit this Snap");
-    
+
         _snap.name = name;
         _snap.category = category;
         _snap.installation = installation;
