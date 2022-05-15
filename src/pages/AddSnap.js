@@ -19,50 +19,70 @@ const AddSnap = () => {
 			label: "Snap Link",
 			description: "(metadata URI)",
 			placeholder: "",
-			type: "url"
+			type: "url",
+			name: "metadataURI"
 		},
 		{
 			label: "Snap Name",
 			description: "(alphanumeric only)",
 			placeholder: "e.g. Snap Name",
-			type: "text"
+			type: "text",
+			name: ""
 		},
 		{
 			label: "GitHub Repository",
 			description: "(link)",
 			placeholder: "e.g. github.com/snap-project",
-			type: "url"
+			type: "url",
+			name: "githubLink"
 		},
 		{
 			// Should this be username?
 			label: "Offered By",
 			description: "(Author or Organization)",
 			placeholder: "@username",
-			type: "text"
+			type: "text",
+			name: "creator"
 		},
 		{
 			label: "Version",
 			description: "",
 			placeholder: "0.0.0",
-			type: "number"
+			type: "number",
+			name: "version"
 		},
 		{
 			label: "Website",
 			description: "(Author or Organization)",
 			placeholder: "@username",
-			type: "url"
+			type: "url",
+			name: "npmPackageLink"
 		},
 		{
 			label: "Snap Image Link",
 			description: "(A jpeg, png, or svg)",
 			placeholder: "",
-			type: "text"
+			type: "text",
+			name: "imageURI"
 		},
 	]
 
 	const wenSubmit = (e) => {
 		e.preventDefault()
-		console.log(formRef.current.elements)
+		const inputs = [...formRef.current.elements].filter(
+        element => element.type === "text" || element.type === "url" || element.type === 'number' || element.name === "description"
+      );
+		const formValues = inputs.reduce(
+        (acc, input) => {
+          return {
+            ...acc,
+            [input.name]: input.value
+          };
+        }
+			)
+			console.log(formValues)
+		// users = users.filter(obj => obj.name == filter.name && obj.address == filter.address)
+
 	}
   return (
     <>

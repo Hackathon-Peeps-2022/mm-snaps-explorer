@@ -147,6 +147,8 @@ const GlobalStyles = createGlobalStyle`
 		fieldset {
 			display: grid;
 			width: 60%;
+			border-color: transparent;
+			padding: 1em;
 			margin: 0 auto;
 			grid-template-areas:
 				'snapLink snapName'
@@ -184,7 +186,7 @@ const GlobalStyles = createGlobalStyle`
 				}
 				textarea {
 				  resize: none;
-					height: 200px;
+					height: 150px;
 					font-family: 'Euclid', serif;
 					width: 100%;
 				}

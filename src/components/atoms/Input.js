@@ -38,7 +38,7 @@ export const TextArea = () => {
 	return (
 		<label htmlFor="">
 			<p>Snap Description (Up to 1000 Characters)</p>
-			<textarea name="" required maxLength="1000" />
+			<textarea required maxLength="1000" name="description" />
 		</label>
 	)
 }
