@@ -54,6 +54,8 @@ const Recommended = () => {
           name={snap[2]}
           description={snap[7]}
           logo={snap[5]}
+          upvotes={snap[8].toNumber()}
+          downvotes={snap[9].toNumber()}
         />
       );
     });

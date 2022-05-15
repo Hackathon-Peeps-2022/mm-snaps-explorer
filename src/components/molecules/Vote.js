@@ -1,9 +1,11 @@
-import React, { useState } from "react";
+import React, { useContext } from "react";
 
 import styled from "styled-components";
 
 import chevronUp from "../../assets/chevron-up.svg";
 import chevronDown from "../../assets/chevron-down.svg";
+import { EthProvider } from "../../ethereum";
+import { calculateRating } from "../../utils";
 
 const Wrap = styled.div`
   grid-area: vote;
@@ -26,13 +28,23 @@ const Wrap = styled.div`
   }
 `;
 
-const Vote = () => {
-  const [vote, setVote] = useState(0);
+const Vote = ({ id, upvotes, downvotes }) => {
+  const { contract } = useContext(EthProvider);
+  const rating = calculateRating(upvotes, downvotes);
+
+  const upvote = async (id) => {
+    await contract.upvote(id);
+  };
+
+  const downvote = async (id) => {
+    await contract.downvote(id);
+  };
+
   return (
     <Wrap>
-      <button onClick={() => setVote(vote + 1)} />
-      <p>{vote}</p>
-      <button onClick={() => setVote(vote - 1)} />
+      <button onClick={() => upvote(id)} />
+      <p>{rating}</p>
+      <button onClick={() => downvote(id)} />
     </Wrap>
   );
 };

@@ -7,6 +7,7 @@ import Skeleton from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
 import MetamaskSnapsExplorer from "../contracts/MetamaskSnapsExplorer.json";
 import { ethers } from "ethers";
+import { calculateRating } from "../utils";
 
 const Wrap = styled.div`
   max-width: 800px;
@@ -117,28 +118,28 @@ const SnapDetails = () => {
             <Description>{snap[7]}</Description>
             <InstallButton installation={snap[4]} />
             <Votes>
-              Votes blah blah | Rating blah blah | Category blah blah
+              Votes: {snap[8].toNumber() + snap[9].toNumber()} | Rating: {calculateRating(snap[8].toNumber(), snap[9].toNumber())} / 5 | Category: {snap[3]}
             </Votes>
           </Wrap>
         )
         // <ImageGrid>
         // <img
         //   src={`/snap-images/${snap.title}-1.png`}
-        //   alt={snap.name}
+        //   alt={snap[2]}
         //   onError={(event) =>
         //     event.target.setAttribute("style", "display:none")
         //   }
         // >
         //   <img
         //     src={`/snap-images/${snap.title}-2.png`}
-        //     alt={snap.name}
+        //     alt={snap[2]}
         //     onError={(event) =>
         //       event.target.setAttribute("style", "display:none")
         //     }
         //   />
         //   <img
         //     src={`/snap-images/${snap.title}-3.png`}
-        //     alt={snap.name}
+        //     alt={snap[2]}
         //     onError={(event) =>
         //       event.target.setAttribute("style", "display:none")
         //     }
@@ -153,7 +154,7 @@ const SnapDetails = () => {
         //   </div>
         //   <div>
         //     <h4>Website</h4>
-        //     {snap.dapp}
+        //     {snap[6]}
         //   </div>
         //   <div>
         //     <h4>Offered by</h4>
@@ -170,7 +171,7 @@ const SnapDetails = () => {
         //   </div>
         // </FlexyRow>
         // <h3>Description</h3>
-        // <p>{snap.description}</p>
+        // <p>{snap[7]}</p>
       }
     </Flexy>
   );
