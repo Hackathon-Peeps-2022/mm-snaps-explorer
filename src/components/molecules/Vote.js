@@ -17,7 +17,9 @@ const Wrap = styled.div`
     height: 1em;
     width: 1em;
     background-position: center;
+    background-color: transparent;
     border: none;
+    box-shadow: none;
     cursor: pointer;
   }
   > button:first-of-type {
