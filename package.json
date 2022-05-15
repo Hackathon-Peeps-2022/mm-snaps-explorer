@@ -9,13 +9,17 @@
     "@testing-library/user-event": "^13.5.0",
     "ethers": "^5.6.5",
     "framer-motion": "^6.3.3",
+    "immer": "^9.0.14",
     "polished": "^4.2.2",
     "react": "^18.1.0",
+    "react-device-detect": "^2.2.2",
     "react-dom": "^18.1.0",
+    "react-jazzicon": "^1.0.3",
     "react-loading-skeleton": "^3.1.0",
     "react-router-dom": "^6.3.0",
     "react-scripts": "5.0.1",
     "styled-components": "^5.3.5",
+    "use-immer": "^0.7.0",
     "web-vitals": "^2.1.4"
   },
   "devDependencies": {
@@ -43,7 +47,8 @@
     "lint:react": "eslint './src/**/*.js'",
     "lint:misc": "prettier --check './src/**/*.js'",
     "sit-pretty": "prettier --write './src/**/*.js'",
-    "lint": "yarn lint:css && yarn lint:react && yarn lint:misc"
+    "lint": "yarn lint:css && yarn lint:react && yarn lint:misc",
+    "bribe": "echo you are gonna have to do better than that if you want me to play nice"
   },
   "eslintConfig": {
     "extends": [

@@ -5,7 +5,6 @@ import { transparentize } from "polished";
 
 import InstallButton from "../atoms/InstallButton";
 import Vote from "../molecules/Vote";
-import { Link } from "react-router-dom";
 
 const Wrap = styled.div`
   border: 1px solid red;
@@ -45,19 +44,14 @@ const Wrap = styled.div`
   }
 `;
 
-const SnapItem = (props) => {
-  // Rough for rn
-  // Make sure snapItem also has params to pass in
-  // const { name, img, description } = snapItem
+const SnapItem = ({ name, description, logo }) => {
   return (
     <Wrap>
       <Vote />
-      <img src={props.iconUrl} alt={props.title} />
-      <p>
-        <Link to={`/snap/${props.id}`}>{props.title}</Link>
-      </p>
-      <p>{props.description}</p>
-      <InstallButton installation={props.installation} />
+      <img src={logo} alt="Snap Logo" />
+      <p>{name}</p>
+      <p>{description}</p>
+      <InstallButton />
     </Wrap>
   );
 };

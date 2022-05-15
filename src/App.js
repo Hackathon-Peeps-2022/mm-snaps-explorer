@@ -1,5 +1,5 @@
+import React from "react";
 import { HashRouter, Route, Routes } from "react-router-dom";
-
 import NoMatch from "./pages/NoMatch";
 import Layout from "./pages/Layout";
 import Main from "./pages/Main";
