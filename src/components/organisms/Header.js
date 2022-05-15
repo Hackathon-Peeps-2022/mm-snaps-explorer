@@ -1,6 +1,5 @@
 import React, { useContext } from "react";
 
-import { isMobile } from "react-device-detect";
 import mmbrand from "../../assets/mm_brand.svg";
 import Button from "../atoms/Button";
 import { EthProvider } from "../../ethereum";
@@ -15,10 +14,7 @@ const Header = () => {
       case provider && address !== "":
         return <Account />;
       case provider !== null:
-      case provider && isMobile:
         return <Button icon="fox">Connect with Wallet</Button>;
-      case !provider && isMobile:
-        return null;
       case !provider:
       default:
         return null;

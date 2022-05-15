@@ -60,7 +60,7 @@ contract MetamaskSnapsExplorer {
     ) public returns (RegisteredSnap memory) {
         RegisteredSnap storage _snap = _snaps[id];
         require(_snap.creator != msg.sender, "You are not allowed to edit this Snap");
-    
+
         _snap.name = name;
         _snap.githubLink = githubLink;
         _snap.npmPackageLink = npmPackageLink;
@@ -79,4 +79,3 @@ contract MetamaskSnapsExplorer {
         _snaps[id].downvotes++;
     }
 }
-

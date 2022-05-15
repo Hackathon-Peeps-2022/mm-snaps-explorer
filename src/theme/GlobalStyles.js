@@ -144,6 +144,32 @@ const GlobalStyles = createGlobalStyle`
 
 	form {
 		border: 1px solid red;
+		fieldset {
+			display: grid;
+			grid-template-columns: repeat(2, auto);
+			border: 1px solid green;
+			label {
+				display: flex;
+				flex-direction: column;
+				border: 1px solid blue;
+				height: fit-content;
+				width: fit-content;
+				p {
+					padding: 0;
+					margin: 0;
+				}
+			}
+		}
+	}
+
+	input[type="submit"], button {
+		border: 1px solid #bbc0c5;
+		cursor: pointer;
+		background-color: #fff;
+		box-shadow: rgba(0, 0, 0, 0.05) 0px 3px 12px 0px,
+			rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+		border-radius: 25px;
+		padding: 0.75em 1em;
 	}
 `;
 
