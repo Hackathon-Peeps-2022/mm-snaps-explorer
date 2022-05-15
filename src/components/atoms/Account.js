@@ -8,7 +8,6 @@ import { formatAddress } from "../../utils";
 
 const Wrap = styled.div`
   align-items: center;
-  border-radius: 50px;
   border: 1px solid #bbc0c5;
   box-shadow: rgba(0, 0, 0, 0.05) 0px 3px 12px 0px,
     rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
