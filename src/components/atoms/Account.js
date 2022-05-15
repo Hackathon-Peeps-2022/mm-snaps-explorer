@@ -9,17 +9,17 @@ import { formatAddress } from "../../utils";
 const Wrap = styled.div`
   align-items: center;
   border-radius: 50px;
-	border: 1px solid #bbc0c5;
-	box-shadow: rgba(0, 0, 0, 0.05) 0px 3px 12px 0px,
-		rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
-	border-radius: 25px;
+  border: 1px solid #bbc0c5;
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 3px 12px 0px,
+    rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+  border-radius: 25px;
   display: flex;
   background-color: #fff;
   flex-direction: row;
   padding: 0.5em 0.75em;
   p {
-		padding: 0;
-		margin: 0;
+    padding: 0;
+    margin: 0;
     font-size: 16px;
     line-height: 16px;
   }

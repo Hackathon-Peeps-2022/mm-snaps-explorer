@@ -1,5 +1,5 @@
 import { createGlobalStyle } from "styled-components";
-import { transparentize } from 'polished'
+import { transparentize } from "polished";
 import regular from "../assets/fonts/Euclid/EuclidCircularB-Regular-WebXL.ttf";
 import bold from "../assets/fonts/Euclid/EuclidCircularB-Bold-WebXL.ttf";
 
@@ -168,7 +168,7 @@ const GlobalStyles = createGlobalStyle`
 					padding: 0;
 					margin: 0;
 					span {
-						color: ${transparentize(0.3, '#24292E')};
+						color: ${transparentize(0.3, "#24292E")};
 					}
 				}
 				input, textarea {
