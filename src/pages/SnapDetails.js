@@ -86,6 +86,16 @@ const SnapDetails = () => {
   const getSnap = async () => {
     try {
       const snap = await contract.getSnap(id);
+      const snapObj = {
+        id,
+        title: snap[2],
+        category: snap.category,
+        installation: snap[4],
+        iconUrl: snap[5],
+        dapp: snap[6],
+        description: snap[7],
+      };
+      console.log(snap);
       setSnap(snap);
       setIsLoading(false);
       fetch(`https://api.npms.io/v2/package/${encodeURIComponent(snap[4])}`)
@@ -108,71 +118,73 @@ const SnapDetails = () => {
 
   return (
     <Flexy>
-      {
-        isLoading ? (
-          <h3>Loading...</h3>
-        ) : (
+      {isLoading ? (
+        <h3>Loading...</h3>
+      ) : (
+        <>
           <Wrap>
             <img src={snap[5]} alt={snap[2]} />
             <Name>{snap[2]}</Name>
             <Description>{snap[7]}</Description>
             <InstallButton installation={snap[4]} />
             <Votes>
-              Votes: {snap[8].toNumber() + snap[9].toNumber()} | Rating: {calculateRating(snap[8].toNumber(), snap[9].toNumber())} / 5 | Category: {snap[3]}
+              Votes: {snap[8].toNumber() + snap[9].toNumber()} | Rating:{" "}
+              {calculateRating(snap[8].toNumber(), snap[9].toNumber())} / 5 |
+              Category: {snap.category}
             </Votes>
           </Wrap>
-        )
-        // <ImageGrid>
-        // <img
-        //   src={`/snap-images/${snap.title}-1.png`}
-        //   alt={snap[2]}
-        //   onError={(event) =>
-        //     event.target.setAttribute("style", "display:none")
-        //   }
-        // >
-        //   <img
-        //     src={`/snap-images/${snap.title}-2.png`}
-        //     alt={snap[2]}
-        //     onError={(event) =>
-        //       event.target.setAttribute("style", "display:none")
-        //     }
-        //   />
-        //   <img
-        //     src={`/snap-images/${snap.title}-3.png`}
-        //     alt={snap[2]}
-        //     onError={(event) =>
-        //       event.target.setAttribute("style", "display:none")
-        //     }
-        //   />
-        // </ImageGrid>
-        // <h3>Details</h3>
-        // <FlexyRow>
-        //   <div>
-        //     <h4>GitHub</h4>
-        //     {items?.collected?.metadata?.links?.repository ||
-        //       items?.collected?.metadata?.repository?.url || <Skeleton />}
-        //   </div>
-        //   <div>
-        //     <h4>Website</h4>
-        //     {snap[6]}
-        //   </div>
-        //   <div>
-        //     <h4>Offered by</h4>
-        //     {items?.collected?.metadata?.author?.name ||
-        //       items?.collected?.metadata?.publisher?.username || <Skeleton />}
-        //   </div>
-        //   <div>
-        //     <h4>Version</h4>
-        //     {items?.collected?.metadata?.version || <Skeleton />}
-        //   </div>
-        //   <div>
-        //     <h4>Updated</h4>
-        //     {items?.analyzedAt || <Skeleton />}
-        //   </div>
-        // </FlexyRow>
-        // <h3>Description</h3>
-        // <p>{snap[7]}</p>
-      }
+          <ImageGrid>
+            <img
+              src={`/snap-images/${snap.name}-1.png`}
+              alt={snap[2]}
+              onError={(event) =>
+                event.target.setAttribute("style", "display:none")
+              }
+            />
+            <img
+              src={`/snap-images/${snap.name}-2.png`}
+              alt={snap[2]}
+              onError={(event) =>
+                event.target.setAttribute("style", "display:none")
+              }
+            />
+            <img
+              src={`/snap-images/${snap.name}-3.png`}
+              alt={snap[2]}
+              onError={(event) =>
+                event.target.setAttribute("style", "display:none")
+              }
+            />
+          </ImageGrid>
+          <h3>Details</h3>
+          <FlexyRow>
+            <div>
+              <h4>GitHub</h4>
+              {items?.collected?.metadata?.links?.repository ||
+                items?.collected?.metadata?.repository?.url || <Skeleton />}
+            </div>
+            <div>
+              <h4>Website</h4>
+              {snap[6]}
+            </div>
+            <div>
+              <h4>Offered by</h4>
+              {items?.collected?.metadata?.author?.name ||
+                items?.collected?.metadata?.publisher?.username || <Skeleton />}
+            </div>
+            <div>
+              <h4>Version</h4>
+              {items?.collected?.metadata?.version || <Skeleton />}
+            </div>
+            <div>
+              <h4>Updated</h4>
+              {items?.analyzedAt || <Skeleton />}
+            </div>
+          </FlexyRow>
+          <h3>Description</h3>
+          <p>{snap[7]}</p>
+        </>
+      )}
     </Flexy>
   );
 };
